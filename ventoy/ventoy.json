@@ -6,20 +6,26 @@
     ],
     "theme": {
         "file": [
-          "/ventoy/theme/distro-grub-themes/customize/ventoy/theme.txt"
+          "/ventoy/themes/default/theme.txt"
         ],
         "default_file": 1,
-        "gfxmode": "1920x1080",
+        "gfxmode": "3440x1440,auto",
         "display_mode": "GUI",
         "serial_param": "--unit=0 --speed=9600",
         "ventoy_left": "5%",
         "ventoy_top": "95%",
-        "ventoy_color": "#0000ff",
+        "ventoy_color": "#efefef",
         "fonts": [
-            "/ventoy/theme/ventoy/terminus-12.pf2",
-            "/ventoy/theme/ventoy/terminus-14.pf2",
-            "/ventoy/theme/ventoy/terminus-16.pf2",
-            "/ventoy/theme/ventoy/terminus-18.pf2"
+            "/ventoy/fonts/dejavu_sans_12.pf2",
+            "/ventoy/fonts/dejavu_sans_14.pf2",
+            "/ventoy/fonts/dejavu_sans_16.pf2",
+            "/ventoy/fonts/dejavu_sans_24.pf2",
+            "/ventoy/fonts/dejavu_sans_32.pf2",
+            "/ventoy/fonts/dejavu_sans_48.pf2",
+            "/ventoy/fonts/terminus-12.pf2:",
+            "/ventoy/fonts/terminus-14.pf2",
+            "/ventoy/fonts/terminus-16.pf2",
+            "/ventoy/fonts/terminus-18.pf2"
         ]
     },
     "auto_install": [
@@ -27,7 +33,7 @@
         "autosel": 1,
         "image": "/iso/qubes-custom.iso",
         "template": [
-          "/ventoy/scripts/qubes/kickstart-desktop-custom.cfg"
+          "/ventoy/kickstart/qubes-desktop.cfg"
         ],
         "timeout": 30
       },
