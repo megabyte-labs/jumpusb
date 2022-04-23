@@ -71,18 +71,17 @@
     "tag": "edge"
   },
   "blueprint": {
-    "boilerplate": true,
-    "description": "A generic starting template for any project",
+    "description": "Scripts, files, and assets used to build a JumpUSB (https://jumpusb.com)",
     "group": "npm",
-    "name": "Generic",
-    "overview": "This repository is the home of a template that integrates with the GitLab UI. It can be used as a starting point for any project since it is a generic template.",
+    "name": "JumpUSB",
+    "overview": "JumpUSB is a Ventoy-powered live USB that will automate the provisioning of a Gas Station network on Qubes OS",
     "repository": {
-      "github": "https://github.com/megabyte-labs/template-generic",
-      "gitlab": "https://gitlab.com/megabyte-labs/templates/generic"
+      "github": "https://github.com/megabyte-labs/jumpusb",
+      "gitlab": "https://gitlab.com/megabyte-labs/jumpusb"
     },
-    "slug": "template-generic",
+    "slug": "jumpusb",
     "subgroup": "misc",
-    "title": "Generic Template"
+    "title": "JumpUSB - Multi-OS Qubes OS Network Provisioning Stick"
   },
   "changelog": {
     "displayTypes": [
