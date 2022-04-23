@@ -81,7 +81,7 @@
     "node": ">=14.18.0"
   },
   "publishConfig": {
-    "@gitlab:registry": "https://gitlab.com/api/v4/projects//packages/npm/",
+    "@gitlab:registry": "https://gitlab.com/api/v4/projects/35594155/packages/npm/",
     "@megabyte:registry": "https://gitlab.com/api/v4/projects/24729680/packages/npm/",
     "access": "public",
     "registry": "https://registry.npmjs.org/",
@@ -89,6 +89,9 @@
   },
   "blueprint": {
     "description": "Scripts, files, and assets used to build a JumpUSB (https://jumpusb.com)",
+    "github_id": "R_kgDOHOZCRg",
+    "gitlab_group_id": "3940994",
+    "gitlab_project_id": "35594155",
     "group": "npm",
     "name": "JumpUSB",
     "overview": "JumpUSB is a Ventoy-powered live USB that will automate the provisioning of a Gas Station network on Qubes OS",
