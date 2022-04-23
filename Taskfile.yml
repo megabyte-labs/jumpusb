@@ -71,6 +71,9 @@ includes:
   git:
     taskfile: ./.config/taskfiles/git/Taskfile.yml
     optional: true
+  git:bug:
+    taskfile: ./.config/taskfiles/git/Taskfile-bug.yml
+    optional: true
   git:github:
     taskfile: ./.config/taskfiles/git/Taskfile-github.yml
     optional: true
@@ -125,14 +128,26 @@ includes:
   install:python:
     taskfile: ./.config/taskfiles/install/Taskfile-python.yml
     optional: true
+  install:qubes:
+    taskfile: ./.config/taskfiles/install/Taskfile-qubes.yml
+    optional: true
+  install:requirements:
+    taskfile: ./.config/taskfiles/install/Taskfile-requirements.yml
+    optional: true
   install:rust:
     taskfile: ./.config/taskfiles/install/Taskfile-rust.yml
+    optional: true
+  install:service:
+    taskfile: ./.config/taskfiles/install/Taskfile-service.yml
     optional: true
   install:software:
     taskfile: ./.config/taskfiles/install/Taskfile-software.yml
     optional: true
   install:tap:
     taskfile: ./.config/taskfiles/install/Taskfile-tap.yml
+    optional: true
+  install:ventoy:
+    taskfile: ./.config/taskfiles/install/Taskfile-ventoy.yml
     optional: true
   lint:
     taskfile: ./.config/taskfiles/lint/Taskfile.yml
@@ -214,6 +229,18 @@ includes:
     optional: true
   security:
     taskfile: ./.config/taskfiles/security/Taskfile.yml
+    optional: true
+  security:disk:
+    taskfile: ./.config/taskfiles/security/Taskfile-disk.yml
+    optional: true
+  security:gpg:
+    taskfile: ./.config/taskfiles/security/Taskfile-gpg.yml
+    optional: true
+  security:ssh:
+    taskfile: ./.config/taskfiles/security/Taskfile-ssh.yml
+    optional: true
+  security:yubikey:
+    taskfile: ./.config/taskfiles/security/Taskfile-yubikey.yml
     optional: true
   symlink:
     taskfile: ./.config/taskfiles/symlink/Taskfile.yml
@@ -394,6 +421,12 @@ env:
       LIBC=$(ldd /bin/ls | grep 'musl' | head -1 | cut -d ' ' -f1)
       if [ -n "$LIBC" ]; then LINUX_FLAVOR='linux-musl'; fi{{end}}
       echo "{{if (eq OS "linux")}}$LINUX_FLAVOR{{else}}darwin{{end}}"
+  PATH:
+    sh: |
+      PATH="$PATH:$HOME/.local/bin:$HOME/.poetry/bin:$HOME/.gem/bin:$HOME/.asdf/bin"
+      PATH="$PATH:$HOME/.local/go/bin:$HOME/go/bin"
+      PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
+      echo "$PATH"
   RECORD_INSTALL:
     sh: if [ -n "$CI" ]; then echo 'true'; fi
   SENTRY_DSN:
@@ -404,7 +437,6 @@ env:
       fi
 
 profile: |
-  PATH="$PATH:$HOME/.local/bin:$HOME/.poetry/bin"
   if [[ "$OSTYPE" == 'linux-gnu'* ]] || [[ "$OSTYPE" == 'linux-musl'* ]]; then
     if [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && ! type brew > /dev/null; then
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -551,6 +583,18 @@ tasks:
       an error so the auto-fixes still have to be validated.
     cmds:
       - task: fix:all
+
+  fresh:
+    summary: Initialize a new project with only the Taskfile.yml present
+    cmds:
+      - curl -sSL https://gitlab.com/megabyte-labs/common/shared/-/raw/master/common/start.sh > start.sh
+      - curl -sSL https://gitlab.com/megabyte-labs/common/shared/-/blob/master/common/.gitignore > .gitignore
+      - curl -sSL https://gitlab.com/megabyte-labs/common/shared/-/blob/master/common/.editorconfig > .editorconfig
+      - curl -sSL https://gitlab.com/megabyte-labs/common/shared/-/blob/master/package.json > package.json
+      - curl -sSL https://gitlab.com/megabyte-labs/common/shared/-/blob/master/.gitlab-ci.yml > .gitlab-ci.yml
+      - TMP="$(mktemp)" && jq -r 'del(.blueprint)' package.json > "$TMP" && mv "$TMP" package.json
+      - bash start.sh
+      - task: prepare
 
   get:links:
     deps:
@@ -1083,3 +1127,22 @@ tasks:
         env:
           UPDATE_PROJECT: 'true'
       - task: common:update:finish
+
+  yubikey:
+    desc: Create an OpenGPG-enabled YubiKey
+    summary: |
+      # Create an OpenGPG-enabled YubiKey SmartCard
+
+      This task will walk you through creating an OpenGPG-enabled
+      YubiKey. You can then use it to manage your GPG keys and SSH keys.
+      It will prompt you for things like your pin and automatically
+      set up the YubiKey.
+
+      The interactive process simplifies this very popular guide on
+      how to set up a YubiKey like this:
+
+      [Guide on Using YubiKey for OpenGPG and SSH keys](https://github.com/drduh/YubiKey-Guide)
+
+      We do still recommend that you skim through the guide.
+    cmds:
+      - task: security:yubikey:prepare
