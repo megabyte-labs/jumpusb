@@ -71,6 +71,7 @@
     "tag": "edge"
   },
   "blueprint": {
+    "boilerplate": true,
     "description": "A generic starting template for any project",
     "group": "npm",
     "name": "Generic",
