@@ -8,7 +8,17 @@
             "sha256": "5934a1561f33a49574ba8bf6dbbdbd18c933470de4e2f7562bec06d24f73839b",
             "sha256_url": "https://mirror.arizona.edu/archlinux/iso/2022.04.05/sha256sums.txt",
             "path": "/iso/archlinux/archlinux-2022.04.05-amd64.iso",
+            "persistence_base": "persistence_ext4_4GB_vtoycow.dat.7z",
+            "persistence_file": "archlinux.dat",
             "live": true
+        },
+        {
+          "url": "https://nyc3.dl.elementary.io/download/MTY1MTU5MzMzNg==/elementaryos-6.1-stable.20211218-rc.iso",
+          "sha256": "35c8086bc0af8ccc5ef8629225b215b1742b3a90b475f9f47723b18a315d86a7",
+          "path": "/iso/elementary/elementary-6.1-amd64.iso",
+          "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
+          "persistence_file": "elementary.dat",
+          "live": true
         },
         {
             "url_axel": "https://{download.fedoraproject.org/pub,mirror.arizona.edu,ftp-nyc.osuosl.org/pub,mirrors.ocf.berkeley.edu}/fedora/linux/releases/35/Server/x86_64/iso/Fedora-Server-dvd-x86_64-35-1.2.iso",
@@ -33,6 +43,8 @@
             "sha256_url": "https://mirrors.ocf.berkeley.edu/kali-images/kali-2022.1/SHA256SUMS",
             "sha256": "172b24b051311f40c8da05f346ec036ee373e0b1eed19b6db31252bd05a9a0f8",
             "path": "/iso/kali/kali-2022.1-amd64.iso",
+            "persistence_base": "persistence_ext4_4GB_persistence.dat.7z",
+            "persistence_file": "kali.dat",
             "live": true
         }
         {
@@ -45,6 +57,8 @@
         {
             "url": "https://rescuedisk.s.kaspersky-labs.com/updatable/2018/krd.iso",
             "path": "/iso/misc/kaspersky-rescue-disk-18-amd64.iso",
+            "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
+            "persistence_file": "krd.dat",
             "live": true
         },
         {
@@ -74,6 +88,21 @@
           "path": "/iso/pfsense/pfsense-2.6.0-amd64.iso"
         },
         {
+          "url": "https://mirrors.nycbug.org/pub/opnsense/releases/22.1/OPNsense-22.1.2-OpenSSL-dvd-amd64.iso.bz2",
+          "url_axel": "https://mirrors.nycbug.org/pub/opnsense/releases/22.1/OPNsense-22.1.2-OpenSSL-dvd-amd64.iso.bz2",
+          "path": "/iso/opnsense/opnsense-22.1.2-amd64.iso"
+        },
+        {
+          "url": "https://download.securityonion.net/file/securityonion/securityonion-2.3.110-20220407.iso",
+          "url_axel": "https://download.securityonion.net/file/securityonion/securityonion-2.3.110-20220407.iso",
+          "path": "/iso/seconion/seconion-2.3.110-amd64.iso"
+        },
+        {
+          "url": "https://download.fydeos.io/FydeOS_for_PC_apu_v14.1-stable.img.xz",
+          "url_axel": "https://download.fydeos.io/FydeOS_for_PC_apu_v14.1-stable.img.xz",
+          "path": "/iso/fydeos/fydeos-14.1.img.xz"
+        },
+        {
             "url": "https://ftp.qubes-os.org/iso/Qubes-R4.1.0-x86_64.iso",
             "url_axel": "https://{ftp.qubes-os.org,mirrors.edge.kernel.org/qubes,mirror.linux.pizza/qubes-os.org,mirrors.ocf.berkeley.edu/qubes}/iso/Qubes-R4.1.0-x86_64.iso",
             "comment": "more advanced verification details available at https://www.qubes-os.org/downloads/",
@@ -85,6 +114,8 @@
             "url": "https://mirror.arizona.edu/ubuntu-releases/22.04/ubuntu-22.04-desktop-amd64.iso",
             "url_axel": "https://mirror.arizona.edu/ubuntu-releases/22.04/ubuntu-22.04-desktop-amd64.iso",
             "comment": "Mirrors https://launchpad.net/ubuntu/+cdmirrors",
+            "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
+            "persistence_file": "ubuntu.dat",
             "sha256_url": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS",
             "sha256_url_gpg": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS.gpg",
             "sha256": "b85286d9855f549ed9895763519f6a295a7698fb9c5c5345811b3eefadfb6f07",
@@ -103,6 +134,14 @@
         {
             "url": "https://software.download.prss.microsoft.com/db/Win11_English_x64.iso?t=c15e0cba-9c8d-4984-b30f-43c42425733d&e=1650582458&h=960d57d2c6a0243e32d3106c0d8f82387966ddf9a9bfce82f89e66866457c014",
             "path": "/iso/windows/windows-11.iso"
+        },
+        {
+          "url": "https://mirrors.edge.kernel.org/zorinos-isos/16/Zorin-OS-16.1-Core-64-bit.iso",
+          "url_axel": "https://{mirrors.edge.kernel.org/zorinos-isos,mirror2.sandyriver.net/pub/zorinos,mirror.clarkson.edu/zorinos/isos,distro.ibiblio.org/zorinos}/16/Zorin-OS-16.1-Core-64-bit.iso",
+          "path": "/iso/zorin/zorin-16.1-amd64.iso",
+          "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
+          "persistence_file": "zorin.dat",
+          "live": true
         }
     ]
 }
