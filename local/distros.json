@@ -11,6 +11,12 @@
             "live": true
         },
         {
+          "url": "https://nyc3.dl.elementary.io/download/MTY1MTU5MzMzNg==/elementaryos-6.1-stable.20211218-rc.iso",
+          "sha256": "35c8086bc0af8ccc5ef8629225b215b1742b3a90b475f9f47723b18a315d86a7",
+          "path": "/iso/elementary/elementary-6.1-amd64.iso",
+          "live": true
+        },
+        {
             "url_axel": "https://{download.fedoraproject.org/pub,mirror.arizona.edu,ftp-nyc.osuosl.org/pub,mirrors.ocf.berkeley.edu}/fedora/linux/releases/35/Server/x86_64/iso/Fedora-Server-dvd-x86_64-35-1.2.iso",
             "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/35/Server/x86_64/iso/Fedora-Server-dvd-x86_64-35-1.2.iso",
             "comment": "Find additional mirrors here: https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-35&arch=x86_64   ----- Find verification instructions here: https://getfedora.org/en/security/",
@@ -103,6 +109,12 @@
         {
             "url": "https://software.download.prss.microsoft.com/db/Win11_English_x64.iso?t=c15e0cba-9c8d-4984-b30f-43c42425733d&e=1650582458&h=960d57d2c6a0243e32d3106c0d8f82387966ddf9a9bfce82f89e66866457c014",
             "path": "/iso/windows/windows-11.iso"
+        },
+        {
+          "url": "https://mirrors.edge.kernel.org/zorinos-isos/16/Zorin-OS-16.1-Core-64-bit.iso",
+          "url_axel": "https://{mirrors.edge.kernel.org/zorinos-isos,mirror2.sandyriver.net/pub/zorinos,mirror.clarkson.edu/zorinos/isos,distro.ibiblio.org/zorinos}/16/Zorin-OS-16.1-Core-64-bit.iso",
+          "path": "/iso/zorin/zorin-16.1-amd64.iso",
+          "live": true
         }
     ]
 }
