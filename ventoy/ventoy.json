@@ -1,112 +1,107 @@
 {
   "auto_install": [
     {
-      "autosel": 1,
-      "image": "/iso/qubes-custom.iso",
-      "template": ["/ventoy/kickstart/qubes-desktop.cfg"],
-      "timeout": 30
-    },
-    {
       "parent": "/iso/fedora",
       "template": [
-        "/ventoy/scripts/fedora/kickstart-server.cfg",
-        "/ventoy/scripts/fedora/kickstart-workstation-minimal.cfg",
-        "/ventoy/scripts/fedora/kickstart-workstation-full.cfg"
+        "/ventoy/scripts/fedora/kickstart.cfg"
       ]
     },
     {
       "parent": "/iso/qubes",
       "template": [
-        "/ventoy/scripts/qubes/kickstart-desktop-minimal.cfg",
-        "/ventoy/scripts/qubes/kickstart-desktop-full.cfg"
+        "/ventoy/scripts/qubes/kickstart.cfg"
       ]
     },
     {
       "parent": "/iso/ubuntu",
       "template": [
         "/ventoy/scripts/ubuntu/cloud-init-server",
-        "/ventoy/scripts/ubuntu/cloud-init-desktop-minimal",
-        "/ventoy/scripts/ubuntu/cloud-init-desktop-full"
+        "/ventoy/scripts/ubuntu/cloud-init-desktop"
       ]
     },
     {
       "parent": "/iso/windows",
-      "template": ["/ventoy/scripts/windows-11-minimal.xml", "/ventoy/scripts/windows-11-full.xml"]
+      "template": ["/ventoy/scripts/windows/Unattended-minimal.xml", "/ventoy/scripts/windows/Unattended.xml"]
     }
   ],
   "control": [
     { "VTOY_DEFAULT_SEARCH_ROOT": "/iso" },
-    { "VTOY_MENU_TIMEOUT": "30" },
-    { "VTOY_DEFAULT_IMAGE": "/iso/qubes-custom.iso" }
-  ],
-  "injection": [
-    {
-      "archive": "/assets/playbooks.tar.gz",
-      "parent": "/iso/fedora"
-    },
-    {
-      "archive": "/assets/playbooks.tar.gz",
-      "parent": "/iso/qubes"
-    },
-    {
-      "archive": "/assets/playbooks.tar.gz",
-      "parent": "/iso/ubuntu"
-    },
-    {
-      "archive": "/assets/playbooks.zip",
-      "parent": "/iso/windows"
-    }
+    { "VTOY_MENU_TIMEOUT": "30" }
   ],
   "menu_alias": [
     {
-      "alias": "Install Fedora 36",
-      "image": "/iso/fedora/fedora-server-36.iso"
+      "alias": "Fedora",
+      "dir": "/iso/fedora"
     },
     {
-      "alias": "Install Qubes 4.1",
-      "image": "/iso/qubes/qubes-4.1.0.iso"
+      "alias": "Qubes",
+      "dir": "/iso/qubes"
     },
     {
-      "alias": "Install Ubuntu 22.04 (Jammy Jellyfish)",
-      "image": "/iso/ubuntu/ubuntu-server-22.04.iso"
+      "alias": "Ubuntu",
+      "dir": "/iso/ubuntu"
     },
     {
-      "alias": "Install Windows 11",
-      "dir": "/iso/windows/windows-11.iso"
+      "alias": "Windows",
+      "dir": "/iso/windows"
     },
     {
-      "alias": "Run ArchLinux (Live)",
-      "image": "/iso/live/archlinux.iso"
+      "alias": "ArchLinux",
+      "dir": "/iso/archlinux"
     },
     {
-      "alias": "Run CloneZilla (Live)",
-      "image": "/iso/live/clonezilla.iso"
+      "alias": "CloneZilla",
+      "image": "/iso/misc/clonezilla-2.8.1-12-amd64.iso"
     },
     {
-      "alias": "Run ElementaryOS (Live)",
-      "image": "/iso/live/elementary.iso"
+      "alias": "Elementary",
+      "dir": "/iso/elementary"
     },
     {
-      "alias": "Run Kali (Live)",
-      "image": "/iso/live/kali.iso"
+      "alias": "Kali",
+      "dir": "/iso/kali"
     },
     {
-      "alias": "Run Kaspersky Rescue Disk (Live)",
-      "image": "/iso/live/kaspersky-rescue-disk.iso"
+      "alias": "pfSense",
+      "dir": "/iso/pfsense"
     },
     {
-      "alias": "Run Ubuntu 22.04 (Jammy Jellyfish) (Live)",
-      "image": "/iso/live/ubuntu.iso"
+      "alias": "FydeOS",
+      "dir": "/iso/fydeos"
     },
     {
-      "alias": "Run ZorinOS (Live)",
-      "image": "/iso/live/zorin.iso"
+      "alias": "Security Onion",
+      "dir": "/iso/seconion"
+    },
+    {
+      "alias": "Deepin",
+      "dir": "/iso/deepin"
+    },
+    {
+      "alias": "OPNSense",
+      "dir": "/iso/opnsense"
+    },
+    {
+      "alias": "Puppy Linux",
+      "dir": "/iso/puppylinux"
+    },
+    {
+      "alias": "ShredOS",
+      "image": "/iso/misc/shredos-amd64.iso"
+    },
+    {
+      "alias": "Kaspersky Rescue Disk",
+      "image": "/iso/misc/kaspersky-rescue-disk-18-amd64.iso"
+    },
+    {
+      "alias": "Zorin",
+      "dir": "/iso/zorin"
     }
   ],
   "menu_class": [
     {
       "class": "arch",
-      "key": "archlinux"
+      "parent": "/iso/archlinux"
     },
     {
       "class": "clonezilla",
@@ -114,27 +109,47 @@
     },
     {
       "class": "elementary",
-      "key": "elementary"
+      "parent": "/iso/elementary"
     },
     {
       "class": "kali",
-      "key": "kali"
+      "parent": "/iso/kali"
     },
     {
       "class": "krd",
       "key": "kaspersky"
     },
     {
+      "class": "fydeos",
+      "parent": "/iso/fydeos"
+    },
+    {
+      "class": "opnsense",
+      "parent": "/iso/opnsense"
+    },
+    {
+      "class": "pfsense",
+      "parent": "/iso/pfsense"
+    },
+    {
+      "class": "puppy",
+      "parent": "/iso/puppylinux"
+    },
+    {
+      "class": "seconion",
+      "parent": "/iso/seconion"
+    },
+    {
+      "class": "shred",
+      "key": "shredos"
+    },
+    {
       "class": "ubuntu",
-      "key": "ubuntu"
+      "parent": "/iso/ubuntu"
     },
     {
       "class": "zorin",
-      "key": "zorin"
-    },
-    {
-      "class": "arch",
-      "parent": "/iso/archlinux"
+      "parent": "/iso/zorin"
     },
     {
       "class": "fedora",
@@ -145,37 +160,33 @@
       "parent": "/iso/qubes"
     },
     {
-      "class": "ubuntu",
-      "parent": "/iso/ubuntu"
-    },
-    {
       "class": "windows",
       "parent": "/iso/windows"
     }
   ],
   "persistence": [
     {
-      "backend": ["/persistence/archlinux-live.dat", "/persistence/archlinux-live-alternate.dat"],
+      "backend": ["/persistence/archlinux.dat"],
       "image": "/iso/live/archlinux.iso"
     },
     {
-      "backend": ["/persistence/elementary-live.dat", "/persistence/elementary-live-alternate.dat"],
+      "backend": ["/persistence/elementary.dat"],
       "image": "/iso/live/elementary.iso"
     },
     {
-      "backend": ["/persistence/kali-live.dat", "/persistence/kali-live-alternate.dat"],
+      "backend": ["/persistence/kali.dat"],
       "image": "/iso/live/kali.iso"
     },
     {
-      "backend": ["/persistence/krd.dat", "/persistence/krd-alternate.dat"],
+      "backend": ["/persistence/krd.dat"],
       "image": "/iso/live/kaspersky-rescue-disk.iso"
     },
     {
-      "backend": ["/persistence/ubuntu-live.dat", "/persistence/ubuntu-live-alternate.dat"],
+      "backend": ["/persistence/ubuntu.dat"],
       "image": "/iso/live/ubuntu.iso"
     },
     {
-      "backend": ["/persistence/zorin-live.dat", "/persistence/zorin-live-alternate.dat"],
+      "backend": ["/persistence/zorin.dat"],
       "image": "/iso/live/zorin.iso"
     }
   ],
