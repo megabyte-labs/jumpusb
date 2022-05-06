@@ -46,7 +46,7 @@
             "persistence_base": "persistence_ext4_4GB_persistence.dat.7z",
             "persistence_file": "kali.dat",
             "live": true
-        }
+        },
         {
             "url": "https://distro.ibiblio.org/puppylinux/puppy-fossa/fossapup64-9.5.iso",
             "url_axel": "https://{distro.ibiblio.org,ftp.nluug.nl/ftp/pub/os/Linux/distr}/puppylinux/puppy-fossa/fossapup64-9.5.iso",
