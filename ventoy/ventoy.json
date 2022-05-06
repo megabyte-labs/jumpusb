@@ -84,6 +84,10 @@
       "image": "/iso/misc/kaspersky-rescue-disk-18-amd64.iso"
     },
     {
+      "alias": "NetbootXYZ",
+      "image": "/iso/misc/netboot.xyz.io"
+    },
+    {
       "alias": "Zorin",
       "dir": "/iso/zorin"
     }
@@ -132,6 +136,10 @@
     {
       "class": "shred",
       "key": "shredos"
+    },
+    {
+      "class": "netboot",
+      "key": "netboot"
     },
     {
       "class": "ubuntu",

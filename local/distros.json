@@ -62,6 +62,10 @@
             "live": true
         },
         {
+          "url": "https://boot.netboot.xyz/ipxe/netboot.xyz.iso",
+          "path": "/iso/misc/netboot.xyz.iso"
+        },
+        {
             "url": "https://github.com/PartialVolume/shredos.x86_64/releases/download/v2021.08.2_21_x86-64_0.32.023/shredos-2021.08.2_21_x86-64_0.32.023_20220126.iso",
             "path": "/iso/misc/shredos-amd64.iso",
             "live": true
@@ -132,8 +136,8 @@
             "live": true
         },
         {
-            "url": "https://software.download.prss.microsoft.com/db/Win11_English_x64.iso?t=c15e0cba-9c8d-4984-b30f-43c42425733d&e=1650582458&h=960d57d2c6a0243e32d3106c0d8f82387966ddf9a9bfce82f89e66866457c014",
-            "path": "/iso/windows/windows-11.iso"
+            "url": "https://os.install.doctor/windows-11-amd64.iso",
+            "path": "/iso/windows/windows-11-amd64.iso"
         },
         {
           "url": "https://mirrors.edge.kernel.org/zorinos-isos/16/Zorin-OS-16.1-Core-64-bit.iso",
