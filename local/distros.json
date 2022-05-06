@@ -107,6 +107,18 @@
           "path": "/iso/fydeos/fydeos-14.1.img.xz"
         },
         {
+          "url": "https://os.install.doctor/iso/proxmox/proxmox-ve-7.2.1.iso",
+          "path": "/iso/proxmox/proxmox-ve-7.2.1.iso"
+        },
+        {
+          "url": "https://os.install.doctor/iso/proxmox/proxmox-mail-gateway-7.1.1.iso",
+          "path": "/iso/proxmox/proxmox-mail-gateway-7.1.1.iso"
+        },
+        {
+          "url": "https://os.install.doctor/iso/proxmox/proxmox-backup-server-2.1.1.iso",
+          "path": "/iso/proxmox/proxmox-backup-server-2.1.1.iso"
+        },
+        {
             "url": "https://ftp.qubes-os.org/iso/Qubes-R4.1.0-x86_64.iso",
             "url_axel": "https://{ftp.qubes-os.org,mirrors.edge.kernel.org/qubes,mirror.linux.pizza/qubes-os.org,mirrors.ocf.berkeley.edu/qubes}/iso/Qubes-R4.1.0-x86_64.iso",
             "comment": "more advanced verification details available at https://www.qubes-os.org/downloads/",
@@ -136,7 +148,7 @@
             "live": true
         },
         {
-            "url": "https://os.install.doctor/windows-11-amd64.iso",
+            "url": "https://os.install.doctor/iso/windows/windows-11-amd64.iso",
             "path": "/iso/windows/windows-11-amd64.iso"
         },
         {
