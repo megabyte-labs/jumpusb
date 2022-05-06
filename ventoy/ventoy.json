@@ -36,6 +36,10 @@
       "dir": "/iso/windows"
     },
     {
+      "alias": "Proxmox",
+      "dir": "/iso/proxmox"
+    },
+    {
       "alias": "ArchLinux",
       "dir": "/iso/archlinux"
     },
@@ -124,6 +128,10 @@
     {
       "class": "pfsense",
       "parent": "/iso/pfsense"
+    },
+    {
+      "class": "proxmox",
+      "parent": "/iso/proxmox"
     },
     {
       "class": "puppy",
