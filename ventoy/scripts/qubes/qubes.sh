@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://gitlab.com/megabyte-labs/jumpusb/-/raw/master/ventoy/scripts/qubes/qubes.sh
 # https://github.com/endeavouros-team/endeavouros-xfce4-theming
 sudo qubesctl --show-output state.sls update.qubes-dom0
 sudo qubes-dom0-update kernel-latest
@@ -18,13 +19,13 @@ sudo qubesctl --show-output --skip-dom0 --standalones state.sls update.qubes-vm
 sudo qubesctl state.sls qvm.usb-keyboard
 sudo qubesctl state.sls qvm.usb-mouse
 sudo qubesctl state.sls qvm.sys-usb
-echo "sys-keyboard dom0 ask,default_target=dom0" >> /etc/qubes-rpc/policy/qubes.InputKeyboard
-echo "sys-mouse dom0 ask,default_target=dom0" >> /etc/qubes-rpc/policy/qubes.InputMouse
+sudo echo "sys-keyboard dom0 ask,default_target=dom0" >> /etc/qubes-rpc/policy/qubes.InputKeyboard
+sudo echo "sys-mouse dom0 ask,default_target=dom0" >> /etc/qubes-rpc/policy/qubes.InputMouse
 
 sudo qubes-dom0-update qubes-u2f-dom0
-qvm-service --enable work qubes-u2f-proxy
-echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Authenticate
-echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Register
+sudo qvm-service --enable work qubes-u2f-proxy
+sudo echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Authenticate
+sudo echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Register
 
 # GUI-VM / GPU Passthrough
 sudo qubesctl top.enable qvm.sys-gui-gpu
