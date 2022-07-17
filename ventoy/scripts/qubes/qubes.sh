@@ -1,6 +1,5 @@
 #!/bin/bash
 # https://github.com/endeavouros-team/endeavouros-xfce4-theming
-# https://www.whonix.org/wiki/Qubes/Install#Update_dom0
 sudo qubesctl --show-output state.sls update.qubes-dom0
 sudo qubes-dom0-update kernel-latest
 sudo qubes-dom0-update qubes-template-fedora-36
@@ -8,9 +7,13 @@ sudo qubes-dom0-update qubes-template-debian-11
 sudo qubes-dom0-update qubes-template-debian-11-minimal
 sudo qubes-dom0-update qubes-template-debian-10-minimal
 sudo qubes-dom0-update qubes-repo-contrib
+sudo qubes-dom0-update qubes-repo-templates
+sudo qubes-dom0-update qubes-windows-tools
 sudo qubes-dom0-update --clean -y
 sudo qubesctl --show-output --skip-dom0 --templates state.sls update.qubes-vm
 sudo qubesctl --show-output --skip-dom0 --standalones state.sls update.qubes-vm
+
+# https://github.com/Jeeppler/qubes-cheatsheet/blob/master/qubes-cheatsheet.md
 
 sudo qubesctl state.sls qvm.usb-keyboard
 sudo qubesctl state.sls qvm.usb-mouse
