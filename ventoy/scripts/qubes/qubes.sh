@@ -54,8 +54,6 @@ qvm-start opnsense
 qvm-prefs opnsense debug false
 qvm-prefs opnsense qrexec_timeout 300
 qvm-prefs opnsense guivm dom0
-
-
 qvm-create --class=DispVM -l green opnsense-dvm
 qvm-prefs opnsense-dvm autostart true
 qvm-prefs opnsense-dvm netvm sys-net
