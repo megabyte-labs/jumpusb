@@ -22,7 +22,7 @@ sudo qubesctl state.sls qvm.sys-usb
 sudo echo "sys-keyboard dom0 ask,default_target=dom0" >> /etc/qubes-rpc/policy/qubes.InputKeyboard
 sudo echo "sys-mouse dom0 ask,default_target=dom0" >> /etc/qubes-rpc/policy/qubes.InputMouse
 
-sudo qubes-dom0-update qubes-u2f-dom0
+sudo qubes-dom0-update -y qubes-u2f-dom0
 sudo qvm-service --enable work qubes-u2f-proxy
 sudo echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Authenticate
 sudo echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Register
@@ -36,7 +36,7 @@ sudo qubesctl state.sls qvm.sys-gui-gpu-attach-gpu
 # Reboot
 
 # Split GPG
-sudo qubes-dom0-update qubes-gpg-split-dom0
+sudo qubes-dom0-update -y qubes-gpg-split-dom0
 
 # Add HVM (add --property virt_mode=hvm if you want to use a kernel from within the qube)
 qvm-create opnsense --class TemplateVM --label orange
