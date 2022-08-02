@@ -17,9 +17,6 @@ sudo qubesctl --show-output --skip-dom0 --standalones state.sls update.qubes-vm
 
 # https://github.com/Jeeppler/qubes-cheatsheet/blob/master/qubes-cheatsheet.md
 
-# sys-usb
-sudo qubesctl state.sls qvm.sys-usb
-
 # sys-keyboard
 # qvm-clone sys-usb sys-keyboard
 sudo qubesctl state.sls qvm.usb-keyboard
@@ -27,7 +24,6 @@ sudo qubesctl state.sls qvm.usb-keyboard
 
 # sys-mouse
 # qvm-clone sys-usb sys-mouse
-sudo qubesctl state.sls qvm.usb-mouse
 sudo echo "sys-mouse dom0 ask,default_target=dom0" > /etc/qubes-rpc/policy/qubes.InputMouse
 
 # U2F
@@ -51,23 +47,23 @@ sudo qubesctl state.sls qvm.updates-via-whonix dom0
 # Reboot
 
 # Add HVM (add --property virt_mode=hvm if you want to use a kernel from within the qube)
-qvm-create opnsense --class TemplateVM --label orange
-qvm-prefs opnsense memory 8192
-qvm-prefs opnsense maxmem 8192
-qvm-prefs opnsense kernel ''
-qvm-prefs opnsense virt_mode hvm
-qvm-prefs opnsense linux-stubdom ''
-qvm-prefs opnsense debug true
-qvm-features opnsense video-model cirrus
-qvm-volume extend opnsense:root 120g
-qvm-start opnsense --cdrom=dom0:/usr/local/iso/opnsense.iso
-# Restart after installation ends
-qvm-start opnsense
-qvm-prefs opnsense debug false
-qvm-prefs opnsense qrexec_timeout 300
-qvm-prefs opnsense guivm dom0
-qvm-create --class=DispVM -l green opnsense-dvm
-qvm-prefs opnsense-dvm autostart true
-qvm-prefs opnsense-dvm netvm sys-net
-qvm-prefs opnsense-dvm provides_network true
-qvm-features opnsense-dvm appmenus-dispvm ''
+#qvm-create opnsense --class TemplateVM --label orange
+#qvm-prefs opnsense memory 8192
+#qvm-prefs opnsense maxmem 8192
+#qvm-prefs opnsense kernel ''
+#qvm-prefs opnsense virt_mode hvm
+#qvm-prefs opnsense linux-stubdom ''
+#qvm-prefs opnsense debug true
+#qvm-features opnsense video-model cirrus
+#qvm-volume extend opnsense:root 120g
+#qvm-start opnsense --cdrom=dom0:/usr/local/iso/opnsense.iso
+## Restart after installation ends
+#qvm-start opnsense
+#qvm-prefs opnsense debug false
+#qvm-prefs opnsense qrexec_timeout 300
+#qvm-prefs opnsense guivm dom0
+#qvm-create --class=DispVM -l green opnsense-dvm
+#qvm-prefs opnsense-dvm autostart true
+#qvm-prefs opnsense-dvm netvm sys-net
+#qvm-prefs opnsense-dvm provides_network true
+#qvm-features opnsense-dvm appmenus-dispvm ''
