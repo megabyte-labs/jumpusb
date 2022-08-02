@@ -1,0 +1,10 @@
+---
+base:
+  dom0:
+    - archlinux-desktop
+    - centos-desktop
+    - debian-desktop
+    - fedora-desktop
+    - macos-desktop
+    - ubuntu-desktop
+    - windows-desktop

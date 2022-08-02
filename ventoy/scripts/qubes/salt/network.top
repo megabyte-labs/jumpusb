@@ -1,0 +1,6 @@
+---
+base:
+  dom0:
+    - opnsense
+    - pritunl
+    - ubuntu-server
