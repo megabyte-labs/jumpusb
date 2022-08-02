@@ -21,17 +21,17 @@ sudo qubesctl --show-output --skip-dom0 --standalones state.sls update.qubes-vm
 # sys-keyboard
 # qvm-clone sys-usb sys-keyboard
 sudo qubesctl state.sls qvm.usb-keyboard
-# sudo echo "sys-keyboard dom0 ask,default_target=dom0" > /etc/qubes-rpc/policy/qubes.InputKeyboard
+# echo "sys-keyboard dom0 ask,default_target=dom0" | sudo tee /etc/qubes-rpc/policy/qubes.InputKeyboard
 
 # sys-mouse
 # qvm-clone sys-usb sys-mouse
-sudo echo "sys-mouse dom0 ask,default_target=dom0" > /etc/qubes-rpc/policy/qubes.InputMouse
+# echo "sys-mouse dom0 ask,default_target=dom0" | sudo tee /etc/qubes-rpc/policy/qubes.InputMouse
 
 # U2F
 sudo qubes-dom0-update -y qubes-u2f-dom0
 sudo qvm-service --enable work qubes-u2f-proxy
-sudo echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Authenticate
-sudo echo "$anyvm sys-usb allow,user=root" > /etc/qubes-rpc/policy/u2f.Register
+echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Authenticate
+echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Register
 
 # Split GPG
 sudo qubes-dom0-update -y qubes-gpg-split-dom0
