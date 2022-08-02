@@ -1,6 +1,7 @@
 #!/bin/bash
 # https://gitlab.com/megabyte-labs/jumpusb/-/raw/master/ventoy/scripts/qubes/qubes.sh
 # https://github.com/endeavouros-team/endeavouros-xfce4-theming
+# TODO: Temporarily disable auto-logout or figure out why USB keyboard events are blocked during install
 sudo qubesctl --show-output state.sls update.qubes-dom0
 sudo qubes-dom0-update qubes-template-fedora-36
 sudo qubes-dom0-update qubes-template-fedora-36-xfce4
