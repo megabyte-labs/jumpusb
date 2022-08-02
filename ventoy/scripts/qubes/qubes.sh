@@ -25,7 +25,7 @@ sudo qubesctl state.sls qvm.usb-keyboard
 
 # sys-mouse
 # qvm-clone sys-usb sys-mouse
-# echo "sys-mouse dom0 ask,default_target=dom0" | sudo tee /etc/qubes-rpc/policy/qubes.InputMouse
+echo "sys-usb dom0 ask,default_target=dom0" | sudo tee /etc/qubes-rpc/policy/qubes.InputMouse
 
 # U2F
 sudo qubes-dom0-update -y qubes-u2f-dom0
