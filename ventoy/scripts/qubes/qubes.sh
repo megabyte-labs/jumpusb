@@ -2,6 +2,7 @@
 # https://gitlab.com/megabyte-labs/jumpusb/-/raw/master/ventoy/scripts/qubes/qubes.sh
 # https://github.com/endeavouros-team/endeavouros-xfce4-theming
 # TODO: Temporarily disable auto-logout or figure out why USB keyboard events are blocked during install
+# TODO: Ask why usb-keyboard causes system to freeze
 sudo qubesctl --show-output state.sls update.qubes-dom0
 sudo qubes-dom0-update qubes-template-fedora-36
 sudo qubes-dom0-update qubes-template-fedora-36-xfce4
@@ -18,9 +19,11 @@ sudo qubesctl --show-output --skip-dom0 --standalones state.sls update.qubes-vm
 
 # https://github.com/Jeeppler/qubes-cheatsheet/blob/master/qubes-cheatsheet.md
 
+sudo qubesctl state.sls qvm.sys-usb
+
 # sys-keyboard
 # qvm-clone sys-usb sys-keyboard
-sudo qubesctl state.sls qvm.usb-keyboard
+# sudo qubesctl state.sls qvm.usb-keyboard
 # echo "sys-keyboard dom0 ask,default_target=dom0" | sudo tee /etc/qubes-rpc/policy/qubes.InputKeyboard
 
 # sys-mouse
