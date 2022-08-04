@@ -28,7 +28,7 @@ sudo qubes-dom0-update qubes-template-fedora-36
 sudo qubes-dom0-update qubes-template-debian-11-minimal
 
 # U2F
-sudo qubes-dom0-update qubes-u2f-dom0
+sudo qubes-dom0-update -y qubes-u2f-dom0
 sudo qvm-service --enable personal qubes-u2f-proxy
 sudo qvm-service --enable work qubes-u2f-proxy
 echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Authenticate
