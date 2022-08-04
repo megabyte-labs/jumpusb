@@ -24,20 +24,60 @@ if ! grep "$INPUT_MOUSE_RULE" "$INPUT_MOUSE_FILE"; then
 fi
 
 sudo qubes-dom0-update qubes-template-fedora-36
-# sudo qubes-dom0-update qubes-template-debian-11 # Already installed on Qubes 4.1
+sudo qubes-dom0-update qubes-template-fedora-36-minimal
 sudo qubes-dom0-update qubes-template-debian-11-minimal
+
+# Create TemplateVM for Fedora 36
+qvm-clone fedora-36 fedora-36-dvm
+qvm-prefs fedora-36-dvm template_for_dispvms True
+qvm-features fedora-36-dvm appmenus-dispvm 1
+
+# Create TemplateVMs that include all the Gas Station software
+qvm-clone fedora-36 fedora-36-full
+qvm-prefs fedora-36-full label orange
+qvm-clone debian-11 debian-11-full
+qvm-prefs debian-11-full label orange
+
+# Create fully-loaded disposable VMs
+qvm-clone debian-11-dvm debian-11-dvm-full
+qvm-prefs debian-11-dvm-full label green
+qvm-clone fedora-36-dvm fedora-36-full
+qvm-prefs fedora-36-full label green
+
+# Add additional task-specific Qubes
+qvm-clone work Development
+qvm-prefs Development label yellow
+qvm-clone work Web
+qvm-prefs Web label yellow
+qvm-clone work Remote
+qvm-prefs Remote label cyan
+
+# Communication, Media
+
+# Set-up offline Qubes
 
 # U2F
 sudo qubes-dom0-update -y qubes-u2f-dom0
 sudo qvm-service --enable personal qubes-u2f-proxy
 sudo qvm-service --enable work qubes-u2f-proxy
+sudo qvm-service --enable anon-whonix qubes-u2f-proxy
+sudo qvm-service --enable development qubes-u2f-proxy
+sudo qvm-service --enable browser qubes-u2f-proxy
 echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Authenticate
 echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Register
 qvm-run --pass-io debian-11 "sudo apt install -y qubes-u2f"
 qvm-run --pass-io fedora-36 "sudo dnf install -y qubes-u2f"
+qvm-run --pass-io whonix-ws-16 "sudo apt install -y qubes-u2f"
+
+# Rename anon-whonix to Anonymous
+qvm-clone anon-whonix Anonymous
+qvm-remove --force anon-whonix
 
 # Split GPG
 sudo qubes-dom0-update qubes-gpg-split-dom0
+qvm-run --pass-io debian-11 "sudo apt install -y qubes-gpg-split"
+qvm-run --pass-io fedora-36 "sudo dnf install -y qubes-gpg-split"
+qvm-run --pass-io whonix-ws-16 "sudo apt install -y qubes-gpg-split"
 
 # GUI-VM / GPU Passthrough
 # sudo qubesctl top.enable qvm.sys-gui
