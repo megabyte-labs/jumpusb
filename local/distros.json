@@ -3,244 +3,210 @@
     {
       "live": true,
       "md5_url": "https://mirror.arizona.edu/archlinux/iso/latest/md5sums.txt",
-      "path": "/iso/archlinux/archlinux-latest-amd64.iso",
-      "persistence_base": "persistence_ext4_4GB_vtoycow.dat.7z",
-      "persistence_file": "archlinux.dat",
-      "sha256_url": "https://mirror.arizona.edu/archlinux/iso/latest/sha256sums.txt",
       "mirrors": [
         "https://mirror.arizona.edu/archlinux/iso/latest/archlinux-x86_64.iso",
         "https://mirrors.ocf.berkeley.edu/archlinux/iso/latest/archlinux-x86_64.iso"
-      ]
+      ],
+      "path": "/iso/archlinux/archlinux-latest-amd64.iso",
+      "persistence_base": "persistence_ext4_4GB_vtoycow.dat.7z",
+      "persistence_file": "archlinux.dat",
+      "sha256_url": "https://mirror.arizona.edu/archlinux/iso/latest/sha256sums.txt"
     },
     {
-      "path": "/iso/debian/debian-11.4.0-amd64.iso",
-      "mirrors": [
-        "https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.4.0-amd64-DVD-1.iso"
-      ]
+      "mirrors": ["https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.4.0-amd64-DVD-1.iso"],
+      "path": "/iso/debian/debian-11.4.0-amd64.iso"
     },
     {
-      "path": "/iso/dragonfly/dragonfly-6.2.2-amd64.iso",
-      "mirrors": [
-        "https://mirror-master.dragonflybsd.org/iso-images/dfly-x86_64-6.2.2_REL.iso"
-      ]
+      "mirrors": ["https://mirror-master.dragonflybsd.org/iso-images/dfly-x86_64-6.2.2_REL.iso"],
+      "path": "/iso/dragonfly/dragonfly-6.2.2-amd64.iso"
     },
     {
       "live": true,
+      "mirrors": ["https://nyc3.dl.elementary.io/download/MTY1MTU5MzMzNg==/elementaryos-6.1-stable.20211218-rc.iso"],
       "path": "/iso/elementary/elementary-6.1-amd64.iso",
       "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
       "persistence_file": "elementary.dat",
-      "sha256": "35c8086bc0af8ccc5ef8629225b215b1742b3a90b475f9f47723b18a315d86a7",
-      "mirrors": [
-        "https://nyc3.dl.elementary.io/download/MTY1MTU5MzMzNg==/elementaryos-6.1-stable.20211218-rc.iso"
-      ]
+      "sha256": "35c8086bc0af8ccc5ef8629225b215b1742b3a90b475f9f47723b18a315d86a7"
     },
     {
       "comment": "Find additional mirrors here: https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-35&arch=x86_64   ----- Find verification instructions here: https://getfedora.org/en/security/",
-      "path": "/iso/fedora/fedora-server-36.1.5-amd64.iso",
-      "sha256_url": "https://getfedora.org/static/checksums/36/iso/Fedora-Server-36-1.5-x86_64-CHECKSUM",
       "mirrors": [
         "https://download.fedoraproject.org/pub/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso",
         "https://mirror.arizona.edu/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso",
         "https://ftp-nyc.osuosl.org/pub/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso",
         "https://mirrors.ocf.berkeley.edu/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso"
-      ]
+      ],
+      "path": "/iso/fedora/fedora-server-36.1.5-amd64.iso",
+      "sha256_url": "https://getfedora.org/static/checksums/36/iso/Fedora-Server-36-1.5-x86_64-CHECKSUM"
     },
     {
       "comment": "Find additional mirrors here: https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-35&arch=x86_64   ----- Find verification instructions here: https://getfedora.org/en/security/",
       "live": true,
-      "path": "/iso/fedora/fedora-workstation-36.1.5-amd64.iso",
-      "sha256_url": "https://getfedora.org/static/checksums/36/iso/Fedora-Workstation-36-1.5-x86_64-CHECKSUM",
       "mirrors": [
         "https://download.fedoraproject.org/pub/fedora/linux/releases/36/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-36-1.5.iso",
         "https://mirror.arizona.edu/fedora/linux/releases/36/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-36-1.5.iso",
         "https://ftp-nyc.osuosl.org/pub/fedora/linux/releases/36/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-36-1.5.iso",
         "https://mirrors.ocf.berkeley.edu/fedora/linux/releases/36/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-36-1.5.iso"
-      ]
+      ],
+      "path": "/iso/fedora/fedora-workstation-36.1.5-amd64.iso",
+      "sha256_url": "https://getfedora.org/static/checksums/36/iso/Fedora-Workstation-36-1.5-x86_64-CHECKSUM"
     },
     {
       "live": true,
-      "path": "/iso/kali/kali-2022.2-amd64.iso",
-      "persistence_base": "persistence_ext4_4GB_persistence.dat.7z",
-      "persistence_file": "kali.dat",
-      "sha256_url": "https://mirrors.ocf.berkeley.edu/kali-images/kali-2022.2/SHA256SUMS",
       "mirrors": [
         "https://cdimage.kali.org/kali-2022.2/kali-linux-2022.2-live-amd64.iso",
         "https://mirror.math.princeton.edu/pub/kali-images/kali-2022.2/kali-linux-2022.2-live-amd64.iso",
         "https://mirrors.ocf.berkeley.edu/kali-images/kali-2022.2/kali-linux-2022.2-live-amd64.iso"
-      ]
+      ],
+      "path": "/iso/kali/kali-2022.2-amd64.iso",
+      "persistence_base": "persistence_ext4_4GB_persistence.dat.7z",
+      "persistence_file": "kali.dat",
+      "sha256_url": "https://mirrors.ocf.berkeley.edu/kali-images/kali-2022.2/SHA256SUMS"
     },
     {
       "md5_url": "https://distro.ibiblio.org/puppylinux/puppy-fossa/fossapup64-9.5.iso.md5.txt",
-      "path": "/iso/puppylinux/puppylinux-focal-fossa-9.5-amd64.iso",
       "mirrors": [
         "https://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/puppy-fossa/fossapup64-9.5.iso",
         "https://distro.ibiblio.org/puppylinux/puppy-fossa/fossapup64-9.5.iso"
-      ]
+      ],
+      "path": "/iso/puppylinux/puppylinux-focal-fossa-9.5-amd64.iso"
     },
     {
       "live": true,
+      "mirrors": ["https://rescuedisk.s.kaspersky-labs.com/updatable/2018/krd.iso"],
       "path": "/iso/misc/kaspersky-rescue-disk-18-amd64.iso",
       "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
-      "persistence_file": "krd.dat",
-      "mirrors": [
-        "https://rescuedisk.s.kaspersky-labs.com/updatable/2018/krd.iso"
-      ]
+      "persistence_file": "krd.dat"
     },
     {
-      "path": "/iso/misc/netboot.xyz.iso",
-      "mirrors": [
-        "https://boot.netboot.xyz/ipxe/netboot.xyz.iso"
-      ]
+      "mirrors": ["https://boot.netboot.xyz/ipxe/netboot.xyz.iso"],
+      "path": "/iso/misc/netboot.xyz.iso"
     },
     {
-      "path": "/iso/linuxmint/linuxmint-21-amd64.iso",
-      "mirrors": [
-        "https://mirrors.kernel.org/linuxmint/stable/21/linuxmint-21-cinnamon-64bit.iso"
-      ]
+      "mirrors": ["https://mirrors.kernel.org/linuxmint/stable/21/linuxmint-21-cinnamon-64bit.iso"],
+      "path": "/iso/linuxmint/linuxmint-21-amd64.iso"
     },
     {
-      "path": "/iso/opensuse/opensuse-15.4-amd64.iso",
       "mirrors": [
         "https://mirrors.ocf.berkeley.edu/opensuse/distribution/leap/15.4/iso/openSUSE-Leap-15.4-DVD-x86_64-Build243.2-Media.iso"
-      ]
+      ],
+      "path": "/iso/opensuse/opensuse-15.4-amd64.iso"
     },
     {
       "live": true,
-      "path": "/iso/misc/shredos-amd64.iso",
       "mirrors": [
         "https://github.com/PartialVolume/shredos.x86_64/releases/download/v2021.08.2_21_x86-64_0.32.023/shredos-2021.08.2_21_x86-64_0.32.023_20220126.iso"
-      ]
+      ],
+      "path": "/iso/misc/shredos-amd64.iso"
     },
     {
       "comment": "md5 sum is retrievable from https://clonezilla.org/downloads/stable/checksums.php",
       "live": true,
-      "path": "/iso/misc/clonezilla-3.0.1-8-amd64.iso",
       "mirrors": [
         "https://iweb.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/https://versaweb.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/3.0.1-8/clonezilla-live-3.0.1-8-amd64.iso"
-      ]
+      ],
+      "path": "/iso/misc/clonezilla-3.0.1-8-amd64.iso"
     },
     {
       "md5_url": "http://cdimage.deepin.com/releases/20.6/MD5SUMS",
+      "mirrors": ["https://cdimage.deepin.com/releases/20.6/deepin-desktop-community-20.6-amd64.iso"],
       "path": "/iso/deepin/deepin-desktop-community-20.6-amd64.iso",
-      "sha256_url": "http://cdimage.deepin.com/releases/20.6/SHA256SUMS",
-      "mirrors": [
-        "https://cdimage.deepin.com/releases/20.6/deepin-desktop-community-20.6-amd64.iso"
-      ]
+      "sha256_url": "http://cdimage.deepin.com/releases/20.6/SHA256SUMS"
     },
     {
-      "path": "/iso/gentoo/gentoo-amd64.iso",
       "mirrors": [
         "https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20220731T170548Z/livegui-amd64-20220731T170548Z.iso"
-      ]
+      ],
+      "path": "/iso/gentoo/gentoo-amd64.iso"
     },
     {
-      "path": "/iso/pfsense/pfsense-2.6.0-amd64.iso",
-      "sha256_url": "https://www.pfsense.org/hashes/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz.sha256",
       "mirrors": [
         "https://atxfiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz",
         "https://sgpfiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz",
         "https://frafiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz"
-      ]
+      ],
+      "path": "/iso/pfsense/pfsense-2.6.0-amd64.iso",
+      "sha256_url": "https://www.pfsense.org/hashes/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz.sha256"
     },
     {
-      "path": "/iso/opnsense/opnsense-22.7-amd64.iso",
-      "mirrors": [
-        "https://mirrors.nycbug.org/pub/opnsense/releases/22.7/OPNsense-22.7-OpenSSL-dvd-amd64.iso.bz2"
-      ]
+      "mirrors": ["https://mirrors.nycbug.org/pub/opnsense/releases/22.7/OPNsense-22.7-OpenSSL-dvd-amd64.iso.bz2"],
+      "path": "/iso/opnsense/opnsense-22.7-amd64.iso"
     },
     {
-      "path": "/ova/remnux/remnux.ova",
-      "mirrors": [
-        "https://app.box.com/shared/static/48u81atwaxnzpwg0pecbnx5r6rgfhudj.ova"
-      ]
+      "mirrors": ["https://app.box.com/shared/static/48u81atwaxnzpwg0pecbnx5r6rgfhudj.ova"],
+      "path": "/ova/remnux/remnux.ova"
     },
     {
-      "path": "/iso/seconion/seconion-2.3.140-amd64.iso",
-      "mirrors": [
-        "https://download.securityonion.net/file/securityonion/securityonion-2.3.140-20220719.iso"
-      ]
+      "mirrors": ["https://download.securityonion.net/file/securityonion/securityonion-2.3.140-20220719.iso"],
+      "path": "/iso/seconion/seconion-2.3.140-amd64.iso"
     },
     {
-      "path": "/iso/fydeos/fydeos-14.1.img.xz",
-      "mirrors": [
-        "https://download.fydeos.io/FydeOS_for_PC_apu_v14.1-stable.img.xz"
-      ]
+      "mirrors": ["https://download.fydeos.io/FydeOS_for_PC_apu_v14.1-stable.img.xz"],
+      "path": "/iso/fydeos/fydeos-14.1.img.xz"
     },
     {
-      "path": "/iso/proxmox/proxmox-ve-7.2.1.iso",
-      "mirrors": [
-        "https://os.install.doctor/iso/proxmox/proxmox-ve-7.2.1.iso"
-      ]
+      "mirrors": ["https://os.install.doctor/iso/proxmox/proxmox-ve-7.2.1.iso"],
+      "path": "/iso/proxmox/proxmox-ve-7.2.1.iso"
     },
     {
-      "path": "/iso/proxmox/proxmox-mail-gateway-7.1.1.iso",
-      "mirrors": [
-        "https://os.install.doctor/iso/proxmox/proxmox-mail-gateway-7.1.1.iso"
-      ]
+      "mirrors": ["https://os.install.doctor/iso/proxmox/proxmox-mail-gateway-7.1.1.iso"],
+      "path": "/iso/proxmox/proxmox-mail-gateway-7.1.1.iso"
     },
     {
-      "path": "/iso/proxmox/proxmox-backup-server-2.2.1.iso",
-      "mirrors": [
-        "https://os.install.doctor/iso/proxmox/proxmox-backup-server-2.2.1.iso"
-      ]
+      "mirrors": ["https://os.install.doctor/iso/proxmox/proxmox-backup-server-2.2.1.iso"],
+      "path": "/iso/proxmox/proxmox-backup-server-2.2.1.iso"
     },
     {
       "comment": "more advanced verification details available at https://www.qubes-os.org/downloads/",
-      "path": "/iso/qubes/qubes-4.1.1-amd64.iso",
-      "sha256_url": "https://mirrors.ocf.berkeley.edu/qubes/iso/Qubes-R4.1.1-x86_64.iso.DIGESTS",
       "mirrors": [
         "https://ftp.qubes-os.org/iso/Qubes-R4.1.1-x86_64.iso",
         "https://mirrors.edge.kernel.org/qubes/iso/Qubes-R4.1.1-x86_64.iso",
         "https://mirror.linux.pizza/qubes-os.org/iso/Qubes-R4.1.1-x86_64.iso",
         "https://mirrors.ocf.berkeley.edu/qubes/iso/Qubes-R4.1.1-x86_64.iso"
-      ]
+      ],
+      "path": "/iso/qubes/qubes-4.1.1-amd64.iso",
+      "sha256_url": "https://mirrors.ocf.berkeley.edu/qubes/iso/Qubes-R4.1.1-x86_64.iso.DIGESTS"
     },
     {
-      "path": "/iso/tails/tails-5.3.1-amd64.img",
-      "mirrors": [
-        "https://tails.braingap.uk/tails/stable/tails-amd64-5.3.1/tails-amd64-5.3.1.img"
-      ]
+      "mirrors": ["https://tails.braingap.uk/tails/stable/tails-amd64-5.3.1/tails-amd64-5.3.1.img"],
+      "path": "/iso/tails/tails-5.3.1-amd64.img"
     },
     {
       "comment": "Mirrors https://launchpad.net/ubuntu/+cdmirrors",
+      "mirrors": ["https://mirror.arizona.edu/ubuntu-releases/22.04/ubuntu-22.04-desktop-amd64.iso"],
       "path": "/iso/ubuntu/ubuntu-desktop-22.04-amd64.iso",
       "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
       "persistence_file": "ubuntu.dat",
       "sha256_url": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS",
-      "sha256_url_gpg": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS.gpg",
-      "mirrors": [
-        "https://mirror.arizona.edu/ubuntu-releases/22.04/ubuntu-22.04-desktop-amd64.iso"
-      ]
+      "sha256_url_gpg": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS.gpg"
     },
     {
       "comment": "Mirrors https://launchpad.net/ubuntu/+cdmirrors",
       "live": true,
-      "path": "/iso/ubuntu/ubuntu-live-server-22.04-amd64.iso",
-      "sha256_url": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS",
-      "sha256_url_gpg": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS.gpg",
       "mirrors": [
         "https://mirror.arizona.edu/ubuntu-releases/22.04/ubuntu-22.04-live-server-amd64.iso",
         "https://mirrors.ocf.berkeley.edu/ubuntu-releases/22.04/ubuntu-22.04-live-server-amd64.iso",
         "https://ftp-nyc.osuosl.org/pub/ubuntu-releases/22.04/ubuntu-22.04-live-server-amd64.iso"
-      ]
+      ],
+      "path": "/iso/ubuntu/ubuntu-live-server-22.04-amd64.iso",
+      "sha256_url": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS",
+      "sha256_url_gpg": "https://mirror.arizona.edu/ubuntu-releases/22.04/SHA256SUMS.gpg"
     },
     {
-      "path": "/iso/windows/windows-11-amd64.iso",
-      "mirrors": [
-        "https://os.install.doctor/iso/windows/windows-11-amd64.iso"
-      ]
+      "mirrors": ["https://os.install.doctor/iso/windows/windows-11-amd64.iso"],
+      "path": "/iso/windows/windows-11-amd64.iso"
     },
     {
       "live": true,
-      "path": "/iso/zorin/zorin-16.1-amd64.iso",
-      "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
-      "persistence_file": "zorin.dat",
       "mirrors": [
         "https://mirrors.edge.kernel.org/zorinos-isos/16/Zorin-OS-16.1-Core-64-bit.iso",
         "https://mirror2.sandyriver.net/pub/zorinos/16/Zorin-OS-16.1-Core-64-bit.iso",
         "https://mirror.clarkson.edu/zorinos/isos/16/Zorin-OS-16.1-Core-64-bit.iso",
         "https://distro.ibiblio.org/zorinos/16/Zorin-OS-16.1-Core-64-bit.iso"
-      ]
+      ],
+      "path": "/iso/zorin/zorin-16.1-amd64.iso",
+      "persistence_base": "persistence_ext4_4GB_casper-rw.dat.7z",
+      "persistence_file": "zorin.dat"
     }
   ]
 }
