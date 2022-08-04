@@ -103,7 +103,7 @@
       "comment": "md5 sum is retrievable from https://clonezilla.org/downloads/stable/checksums.php",
       "live": true,
       "mirrors": [
-        "https://iweb.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/https://versaweb.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/3.0.1-8/clonezilla-live-3.0.1-8-amd64.iso"
+        "https://versaweb.dl.sourceforge.net/project/clonezilla/clonezilla_live_stable/3.0.1-8/clonezilla-live-3.0.1-8-amd64.iso"
       ],
       "path": "/iso/misc/clonezilla-3.0.1-8-amd64.iso"
     },
