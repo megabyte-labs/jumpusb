@@ -12,7 +12,6 @@ sudo qubesctl --show-output --skip-dom0 --templates state.sls update.qubes-vm
 sudo qubesctl --show-output --skip-dom0 --standalones state.sls update.qubes-vm
 
 # Enable USB VM along with USB keyboard settings
-# qvm-clone sys-usb sys-keyboard
 sudo qubesctl state.sls qvm.usb-keyboard
 # echo "sys-keyboard dom0 ask,default_target=dom0" | sudo tee /etc/qubes-rpc/policy/qubes.InputKeyboard
 
