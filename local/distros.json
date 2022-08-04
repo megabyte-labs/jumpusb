@@ -43,6 +43,7 @@
         "https://mirror.arizona.edu/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso",
         "https://ftp-nyc.osuosl.org/pub/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso",
         "https://mirrors.ocf.berkeley.edu/fedora/linux/releases/36/Server/x86_64/iso/Fedora-Server-dvd-x86_64-36-1.5.iso"
+      ]
     },
     {
       "comment": "Find additional mirrors here: https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-35&arch=x86_64   ----- Find verification instructions here: https://getfedora.org/en/security/",
@@ -66,6 +67,7 @@
         "https://cdimage.kali.org/kali-2022.2/kali-linux-2022.2-live-amd64.iso",
         "https://mirror.math.princeton.edu/pub/kali-images/kali-2022.2/kali-linux-2022.2-live-amd64.iso",
         "https://mirrors.ocf.berkeley.edu/kali-images/kali-2022.2/kali-linux-2022.2-live-amd64.iso"
+      ]
     },
     {
       "md5_url": "https://distro.ibiblio.org/puppylinux/puppy-fossa/fossapup64-9.5.iso.md5.txt",
@@ -73,6 +75,7 @@
       "mirrors": [
         "https://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/puppy-fossa/fossapup64-9.5.iso",
         "https://distro.ibiblio.org/puppylinux/puppy-fossa/fossapup64-9.5.iso"
+      ]
     },
     {
       "live": true,
@@ -137,6 +140,7 @@
         "https://atxfiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz",
         "https://sgpfiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz",
         "https://frafiles.netgate.com/mirror/downloads/pfSense-CE-2.6.0-RELEASE-amd64.iso.gz"
+      ]
     },
     {
       "path": "/iso/opnsense/opnsense-22.7-amd64.iso",
