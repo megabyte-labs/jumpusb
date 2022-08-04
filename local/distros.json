@@ -127,10 +127,6 @@
       "path": "/iso/opnsense/opnsense-22.7-amd64.iso"
     },
     {
-      "mirrors": ["https://app.box.com/shared/static/48u81atwaxnzpwg0pecbnx5r6rgfhudj.ova"],
-      "path": "/ova/remnux/remnux.ova"
-    },
-    {
       "mirrors": ["https://download.securityonion.net/file/securityonion/securityonion-2.3.140-20220719.iso"],
       "path": "/iso/seconion/seconion-2.3.140-amd64.iso"
     },

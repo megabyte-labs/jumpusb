@@ -33,6 +33,8 @@ sudo qvm-service --enable personal qubes-u2f-proxy
 sudo qvm-service --enable work qubes-u2f-proxy
 echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Authenticate
 echo "$anyvm sys-usb allow,user=root" | sudo tee /etc/qubes-rpc/policy/u2f.Register
+qvm-run --pass-io debian-11 "sudo apt install -y qubes-u2f"
+qvm-run --pass-io fedora-36 "sudo dnf install -y qubes-u2f"
 
 # Split GPG
 sudo qubes-dom0-update qubes-gpg-split-dom0
