@@ -108,15 +108,6 @@
       "path": "/iso/misc/clonezilla-3.0.1-8-amd64.iso"
     },
     {
-      "md5_url": "http://cdimage.deepin.com/releases/20.6/MD5SUMS",
-      "mirrors": [
-        "https://cdimage.deepin.com/releases/20.6/deepin-desktop-community-20.6-amd64.iso",
-        "https://osdn.net/projects/deepin/storage/20.6/deepin-desktop-community-20.6-amd64.iso"
-      ],
-      "path": "/iso/deepin/deepin-desktop-community-20.6-amd64.iso",
-      "sha256_url": "http://cdimage.deepin.com/releases/20.6/SHA256SUMS"
-    },
-    {
       "mirrors": [
         "https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20220731T170548Z/livegui-amd64-20220731T170548Z.iso"
       ],
