@@ -4,6 +4,8 @@
 # TODO: Temporarily disable auto-logout or figure out why USB keyboard events are blocked during install
 # TODO: Ask why usb-keyboard causes system to freeze
 # https://github.com/Jeeppler/qubes-cheatsheet/blob/master/qubes-cheatsheet.md
+# Change Settings -> Window Manager -> Title font to Monserrat Black font size 9
+# Change Settings -> Window Manager -> Theme to Arc-Dark-Solid
 
 # Update system
 sudo qubesctl --show-output state.sls update.qubes-dom0
