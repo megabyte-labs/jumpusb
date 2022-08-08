@@ -97,11 +97,14 @@ sudo qubesctl state.sls qvm.updates-via-whonix dom0
 #qvm-prefs opnsense maxmem 8192
 #qvm-prefs opnsense kernel ''
 #qvm-prefs opnsense virt_mode hvm
-#qvm-prefs opnsense linux-stubdom ''
+#qvm-prefs opnsense provides_network true
+#qvm-prefs opnsense netvm sys-net
+#qvm-prefs opnsense default_dispvm none
+## qvm-prefs opnsense linux-stubdom '' # Not working
 #qvm-prefs opnsense debug true
 #qvm-features opnsense video-model cirrus
 #qvm-volume extend opnsense:root 120g
-#qvm-start opnsense --cdrom=dom0:/usr/local/iso/opnsense.iso
+#qvm-start opnsense --cdrom=download:/home/user/Downloads/opnsense.iso
 ## Restart after installation ends
 #qvm-start opnsense
 #qvm-prefs opnsense debug false
