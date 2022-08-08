@@ -80,7 +80,8 @@ qvm-run --pass-io debian-11 "sudo apt install -y qubes-gpg-split"
 qvm-run --pass-io fedora-36 "sudo dnf install -y qubes-gpg-split"
 qvm-run --pass-io whonix-ws-16 "sudo apt install -y qubes-gpg-split"
 
-# GUI-VM / GPU Passthrough
+# TODO
+GUI-VM / GPU Passthrough
 # sudo qubesctl top.enable qvm.sys-gui
 # sudo qubesctl top.enable qvm.sys-gui pillar=True
 # sudo qubesctl --all state.highstate
@@ -91,7 +92,6 @@ sudo qubesctl state.sls qvm.updates-via-whonix dom0
 
 # Reboot
 
-# Add HVM (add --property virt_mode=hvm if you want to use a kernel from within the qube)
 #qvm-create opnsense --class TemplateVM --label orange
 #qvm-prefs opnsense memory 8192
 #qvm-prefs opnsense maxmem 8192
@@ -101,17 +101,11 @@ sudo qubesctl state.sls qvm.updates-via-whonix dom0
 #qvm-prefs opnsense netvm sys-net
 #qvm-prefs opnsense default_dispvm none
 ## qvm-prefs opnsense linux-stubdom '' # Not working
-#qvm-prefs opnsense debug true
 #qvm-features opnsense video-model cirrus
 #qvm-volume extend opnsense:root 120g
 #qvm-start opnsense --cdrom=download:/home/user/Downloads/opnsense.iso
 ## Restart after installation ends
-#qvm-start opnsense
-#qvm-prefs opnsense debug false
-#qvm-prefs opnsense qrexec_timeout 300
-#qvm-prefs opnsense guivm dom0
 #qvm-create --class=DispVM -l green opnsense-dvm
+#qvm-prefs opnsense default_dispvm opnsense
 #qvm-prefs opnsense-dvm autostart true
-#qvm-prefs opnsense-dvm netvm sys-net
-#qvm-prefs opnsense-dvm provides_network true
 #qvm-features opnsense-dvm appmenus-dispvm ''
