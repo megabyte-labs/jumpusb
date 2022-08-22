@@ -1,0 +1,73 @@
+# Reference: https://github.com/Qubes-Community/Contents/blob/master/docs/hardware/Autonomous%20Qubes-install%20(kickstart).md
+%pre
+password="{{ kickstart.luksPassword }}"
+echo "autopart --type thinp --encrypted --passphrase=\"$password\"" > /tmp/part-include
+# Wipe first 5GB of each disk to clear random hard-to-erase disk settings
+{{#each kickstart.disks}}
+dd if=/dev/zero of=/dev/{{this}} bs=1000MB count=5
+{{/each}}
+%end
+
+### Initialize ###
+cdrom
+text
+
+### Protective Measures ###
+ignoredisk --only-use={{ kickstart.bootDisk }}
+firewall
+network  --hostname=dom0
+authconfig --enableshadow --passalgo=sha512
+sshpw --lock
+rootpw --lock
+
+### Account ###
+keyboard --vckeymap={{ kickstart.keymap }} --xlayouts='{{ kickstart.xlayouts }}'
+lang {{ kickstart.lang }}
+timezone {{ kickstart.timezone }} --isUtc
+# Generate a hashed password with the following line:
+#    python -c 'import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass("Confirm: ")) else exit())'
+user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ kickstartPassword kickstart.password }} --iscryped
+
+### GRUB2 ###
+# With encrypted /boot directory (Password can be generated with GRUB2):
+#    bootloader --location=mbr --boot-drive=change --password=change --iscrypted
+# Without encrypted /boot directory:
+bootloader --location=mbr --boot-drive={{ kickstart.bootDisk }}
+
+### Partitioning ###
+clearpart --all --initlabel --drives={{join kickstart.disks ","}}
+autopart
+
+### Initial Boot Settings ###
+xconfig  --startxonboot
+firstboot --enable
+
+### Power Off After Installation ###
+poweroff
+
+### Extra Packages ###
+%packages
+@^qubes-xfce
+%end
+
+%post --nochroot
+set -e
+# Copy playbooks
+mkdir -p /mnt/sysimage/etc/ansible
+cp -rf /run/install/repo/.modules/gas-station /mnt/sysimage/etc/ansible
+
+# Set up Qubes Ansible connection plugin symlink
+mkdir -p /mnt/sysimage/usr/share/ansible/plugins/connection
+ln -s /mnt/sysimage/etc/ansible/scripts/connection/qubes.py /usr/share/ansible/plugins/connection/qubes.py
+
+# Set up Qubes Ansible library symlink
+mkdir -p /mnt/sysimage/usr/share/ansible/library
+ln -s /mnt/sysimage/etc/ansible/scripts/library/qubesos.py /usr/share/ansible/library/qubesos.py
+%end
+
+%anaconda
+pwpolicy root --minlen=0 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy user --minlen=0 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy luks --minlen=0 --minquality=1 --notstrict --nochanges --emptyok
+%end
+

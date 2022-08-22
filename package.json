@@ -99,6 +99,19 @@
     "gitlab_group_id": "3940994",
     "gitlab_project_id": "35594155",
     "group": "npm",
+    "kickstart": {
+      "bootDisk": "",
+      "disks": [
+
+      ],
+      "keymap": "us",
+      "lang": "en_US.UTF-8",
+      "luksPassword": "EncryptedDiskPassword!!!",
+      "password": "LoginPassword!!!",
+      "timezone": "America/New_York",
+      "username": "brian",
+      "xlayouts": "us"
+    },
     "name": "JumpUSB",
     "overview": "JumpUSB is a Ventoy-powered live USB that will automate the provisioning of a Gas Station network on Qubes OS",
     "repository": {
