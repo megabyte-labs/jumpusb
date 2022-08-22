@@ -1,3 +1,8 @@
+## Old Script
+
+The following is a script used to provision Qubes. It is not maintained since we use [Gas Station](https://gitlab.com/megabyte-labs/gas-station) to provision Qubes in a more maintainable manner.
+
+```
 #!/bin/bash
 # https://gitlab.com/megabyte-labs/jumpusb/-/raw/master/ventoy/scripts/qubes/qubes.sh
 # https://github.com/endeavouros-team/endeavouros-xfce4-theming
@@ -109,3 +114,4 @@ sudo qubesctl state.sls qvm.updates-via-whonix dom0
 #qvm-prefs opnsense default_dispvm opnsense
 #qvm-prefs opnsense-dvm autostart true
 #qvm-features opnsense-dvm appmenus-dispvm ''
+```
