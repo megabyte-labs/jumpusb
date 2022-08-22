@@ -1,124 +1,14 @@
 {
-  "private": false,
-  "name": "@mblabs/jumpusb",
-  "version": "0.0.1",
-  "description": "Scripts, files, and assets used to build a JumpUSB (https://jumpusb.com)",
-  "license": "MIT",
-  "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
-  "homepage": "https://megabyte.space",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/megabyte-labs/jumpusb.git"
+  "author": "{{author.name}} <{{author.email}}> ({{link.home}})",
+  "blueprint": {
+    "repository": {
+      "github": "{{#if repository.github}}{{repository.github}}{{else}}https://github.com/{{profile.github}}/{{repository.prefix.github}}{{slug}}{{/if}}",
+      "gitlab": "{{#if repository.gitlab}}{{repository.gitlab}}{{else}}{{repository.gitlabBaseUrl}}/{{group}}/{{subgroup}}/{{slug}}{{/if}}"
+    }
   },
   "bugs": {
-    "email": "help@megabyte.space",
-    "url": "https://gitlab.com/megabyte-labs/jumpusb/-/issues"
-  },
-  "type": "commonjs",
-  "main": "dist/main.js",
-  "files": [
-    "dist",
-    "lib"
-  ],
-  "scripts": {
-    "build": "bash start.sh && task npm:build:tsconfig",
-    "bump": "npm run build && npm version patch --no-scripts --no-commit-hooks --no-git-tag-version --force && SKIP_PREPUB=true npm publish",
-    "commit": "bash start.sh && task commit",
-    "fix": "bash start.sh && task fix",
-    "help": "bash start.sh && task --menu",
-    "lint": "bash start.sh && task lint",
-    "preload": "bash start.sh && task preload",
-    "prepare": "bash start.sh && (test -f Taskfile.yml && task npm:prepare) || true",
-    "release": "bash start.sh && task publish:semantic-release",
-    "repair": "bash <(curl -sS https://install.doctor/repair)",
-    "start": "test -z $SKIP_NPM_START && bash start.sh || true",
-    "test": "bash start.sh && task donothing",
-    "unpack": "bash start.sh && task npm:bundle:unpack",
-    "update": "bash start.sh && task update",
-    "vscode": "bash start.sh && task vscode"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/git-cz-emoji"
-    }
-  },
-  "typings": "dist/main.d.ts",
-  "dependencies": {
-    "tslib": "latest"
-  },
-  "peerDependenciesMeta": {
-    "eslint": {
-      "optional": true
-    }
-  },
-  "optionalDependencies": {},
-  "devDependencies": {
-    "@commitlint/config-conventional": "latest",
-    "@types/node": "^16.11.6",
-    "esbuild": "^0.12.29",
-    "esbuild-node-externals": "^1.3.0",
-    "eslint-config-strict-mode": "latest",
-    "git-cz-emoji": "latest",
-    "handlebars-helpers": "latest",
-    "jest-preset-ts": "latest",
-    "prettier": "^2.4.1",
-    "prettier-config-sexy-mode": "latest",
-    "semantic-release-config": "latest",
-    "typescript": "^4.5.5"
-  },
-  "keywords": [
-    "common",
-    "configurations",
-    "files",
-    "gitlab-ci",
-    "mblabs",
-    "megabytelabs",
-    "miscellaneous",
-    "npm",
-    "other",
-    "package",
-    "professormanhattan",
-    "shared",
-    "supporting",
-    "taskfiles",
-    "washingtondc"
-  ],
-  "engines": {
-    "node": ">=14.18.0"
-  },
-  "publishConfig": {
-    "@gitlab:registry": "https://gitlab.com/api/v4/projects/35594155/packages/npm/",
-    "@megabyte:registry": "https://gitlab.com/api/v4/projects/24729680/packages/npm/",
-    "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "tag": "edge"
-  },
-  "blueprint": {
-    "description": "Scripts, files, and assets used to build a JumpUSB (https://jumpusb.com)",
-    "github_id": "R_kgDOHOZCRg",
-    "gitlab_group_id": "3940994",
-    "gitlab_project_id": "35594155",
-    "group": "npm",
-    "kickstart": {
-      "bootDisk": "",
-      "disks": [],
-      "keymap": "us",
-      "lang": "en_US.UTF-8",
-      "luksPassword": "EncryptedDiskPassword!!!",
-      "password": "LoginPassword!!!",
-      "timezone": "America/New_York",
-      "username": "brian",
-      "xlayouts": "us"
-    },
-    "name": "JumpUSB",
-    "overview": "JumpUSB is a Ventoy-powered live USB that will automate the provisioning of a Gas Station network on Qubes OS",
-    "repository": {
-      "github": "https://github.com/megabyte-labs/jumpusb",
-      "gitlab": "https://gitlab.com/megabyte-labs/jumpusb"
-    },
-    "slug": "jumpusb",
-    "subgroup": "misc",
-    "title": "JumpUSB - Multi-OS Qubes OS Network Provisioning Stick"
+    "email": "{{email.help}}",
+    "url": "{{#if repository.gitlab}}{{repository.gitlab}}{{else}}{{repository.gitlabBaseUrl}}/{{group}}/{{subgroup}}/{{slug}}{{/if}}{{repository.location.issues.gitlab}}"
   },
   "changelog": {
     "displayTypes": [
@@ -136,19 +26,48 @@
     ],
     "helpUrl": "https://megabyte.space/docs/contributing/commits"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/git-cz-emoji"
+    }
+  },
+  "dependencies": {},
+  "description": "{{description}}",
+  "devDependencies": {
+    "@commitlint/config-conventional": "latest",
+    "@types/node": "^16.11.6",
+    "esbuild": "^0.12.29",
+    "esbuild-node-externals": "^1.3.0",
+    "eslint-config-strict-mode": "latest",
+    "git-cz-emoji": "latest",
+    "handlebars-helpers": "latest",
+    "jest-preset-ts": "latest",
+    "prettier": "^2.4.1",
+    "prettier-config-sexy-mode": "latest",
+    "semantic-release-config": "latest",
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=14.18.0"
+  },
   "eslintConfig": {
     "extends": "eslint-config-strict-mode"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "funding": [
     {
       "type": "opencollective",
-      "url": "https://opencollective.com/megabytelabs"
+      "url": "{{profile_link.opencollective}}/{{profile.opencollective}}"
     },
     {
       "type": "patreon",
-      "url": "https://www.patreon.com/ProfessorManhattan"
+      "url": "{{profile_link.patreon}}/{{profile.patreon}}"
     }
   ],
+  "homepage": "{{link.home}}",
   "jest": {
     "preset": "jest-preset-ts",
     "reporters": [
@@ -169,6 +88,17 @@
     "gitignore": true,
     "threshold": 0.1
   },
+  "keywords": [
+    "files",
+    "mblabs",
+    "megabytelabs",
+    "miscellaneous",
+    "other",
+    "professormanhattan",
+    "supporting",
+    "washingtondc"
+  ],
+  "license": "{{license}}",
   "lint-staged": {
     "(Brewfile|composer.lock|Gemfile|Gopkg.lock|Pipfile.lock)": [
       "task fix:prettier --"
@@ -239,6 +169,8 @@
       "task image:compress --"
     ]
   },
+  "main": "dist/main.js",
+  "name": "{{#if customPackageName}}{{customPackageName}}{{else}}@{{profile.npmjs_organization}}/{{repository.prefix.github}}{{slug}}{{/if}}",
   "nodemonConfig": {
     "exec": "tsc -p . && node --inspect-brk dist/main",
     "ext": "js,jsx,json,ts,tsx,yml",
@@ -268,10 +200,15 @@
       "update": "Update and refresh the repository with upstream changes and templated parts"
     }
   },
+  "optionalDependencies": {},
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
+  },
   "pnpm": {
     "allowedVersions": {
       "@typescript-eslint/eslint-plugin": "5",
-      "eslint": "8",
       "typescript": "4"
     },
     "neverBuiltDependencies": [
@@ -288,6 +225,13 @@
     }
   },
   "prettier": "prettier-config-sexy-mode",
+  "private": false,
+  "publishConfig": {
+    "@gitlab:registry": "https://gitlab.com/api/v4/projects/{{gitlab_project_id}}/packages/npm/",
+    "access": "{{npm_publish_config_access}}",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "edge"
+  },
   "release": {
     "branches": [
       "main",
@@ -300,6 +244,30 @@
     ],
     "extends": "semantic-release-config"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+{{#if repository.github}}{{repository.github}}{{else}}https://github.com/{{profile.github}}/{{repository.prefix.github}}{{slug}}{{/if}}.git"
+  },
+  "scripts": {
+    "build": "bash start.sh && {{{replace scriptsBuild scriptsReplaceThis scriptsReplaceWith}}}",
+    "bump": "npm run build && npm version patch --no-scripts --no-commit-hooks --no-git-tag-version --force && SKIP_PREPUB=true npm publish",
+    "commit": "bash start.sh && task commit",
+    "fix": "bash start.sh && task fix",
+    "help": "bash start.sh && task --menu",
+    "lint": "bash start.sh && task lint",
+    "preload": "bash start.sh && task preload",
+    "prepare": "bash start.sh && (test -f Taskfile.yml && task npm:prepare) || true",
+    "release": "bash start.sh && task publish:semantic-release",
+    "repair": "bash <(curl -sS https://install.doctor/repair)",
+    "start": "test -z $SKIP_NPM_START && bash start.sh || true",
+    "test": "bash start.sh && {{{replace scriptsTest scriptsReplaceThis scriptsReplaceWith}}}",
+    "unpack": "bash start.sh && task npm:bundle:unpack",
+    "update": "bash start.sh && task update",
+    "vscode": "bash start.sh && task vscode"
+  },
+  "type": "{{npm_type}}",
+  "typings": "dist/main.d.ts",
+  "version": "{{version}}",
   "volta": {
     "node": "18.4.0",
     "yarn": "1.22.19"

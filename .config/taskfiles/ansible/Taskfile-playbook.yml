@@ -2,6 +2,10 @@
 version: '3'
 
 tasks:
+  collections:download:
+    cmds:
+      - ansible-galaxy collection download -r requirements.yml &
+
   docs:
     deps:
       - docs:roles
