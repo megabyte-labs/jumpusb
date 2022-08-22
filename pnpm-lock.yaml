@@ -5086,7 +5086,7 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.21.3
-      caniuse-lite: 1.0.30001380
+      caniuse-lite: 1.0.30001381
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -5595,7 +5595,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001380
+      caniuse-lite: 1.0.30001381
       electron-to-chromium: 1.4.225
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
@@ -5851,8 +5851,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite/1.0.30001380:
-    resolution: {integrity: sha512-OO+pPubxx16lkI7TVrbFpde8XHz66SMwstl1YWpg6uMGw56XnhYVwtPIjvX4kYpzwMwQKr4DDce394E03dQPGg==}
+  /caniuse-lite/1.0.30001381:
+    resolution: {integrity: sha512-fEnkDOKpvp6qc+olg7+NzE1SqyfiyKf4uci7fAU38M3zxs0YOyKOxW/nMZ2l9sJbt7KZHcDIxUnbI0Iime7V4w==}
     dev: true
 
   /capture-exit/2.0.0:
@@ -7677,7 +7677,7 @@ packages:
       eslint-plugin-prefer-arrow: 1.2.3_eslint@8.22.0
       eslint-plugin-prettier: 4.2.1_4684e48c5980d148e4d39aec3317fee1
       eslint-plugin-promise: 5.2.0_eslint@8.22.0
-      eslint-plugin-regexp: 1.8.0_eslint@8.22.0
+      eslint-plugin-regexp: 1.9.0_eslint@8.22.0
       eslint-plugin-rxjs: 4.0.4_eslint@8.22.0+typescript@4.7.4
       eslint-plugin-security: 1.5.0
       eslint-plugin-sonarjs: 0.10.0_eslint@8.22.0
@@ -8218,8 +8218,8 @@ packages:
       eslint: 8.22.0
     dev: true
 
-  /eslint-plugin-regexp/1.8.0_eslint@8.22.0:
-    resolution: {integrity: sha512-zRtG5OpWF+istPsjdZYGH23s2ONuN+EDzioGH81WUPehvwlW/l2sh2EBYdnf58UL9nF4oPQXktaABSOpfeQJ9g==}
+  /eslint-plugin-regexp/1.9.0_eslint@8.22.0:
+    resolution: {integrity: sha512-Che49IZ07w9KcKvrMiqfwBYv44VBunA4NqUo+UTLluYbCos9Du3+pnhkPTLTAx6ZoZ1Rmz7u7o2iC6g6qCuvxw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       eslint: '>=6.0.0'
