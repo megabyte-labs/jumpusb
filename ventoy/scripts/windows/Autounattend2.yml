@@ -17,6 +17,13 @@
             xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <ComputerName>Betelgeuse</ComputerName>
+            <Diagnostics>
+                <OptIn>false</OptIn>
+            </Diagnostics>
+            <OEMInformation>
+                <SupportProvider>JumpUSB by Megabyte Labs</SupportProvider>
+                <SupportURL>https://jumpusb.com</SupportURL>
+            </OEMInformation>
             <DiskConfiguration>
                 <Disk wcm:action="add">
                     <CreatePartitions>
@@ -45,7 +52,7 @@
                         <ModifyPartition wcm:action="add">
                             <Order>1</Order>
                             <PartitionID>1</PartitionID>
-                            <Label>WINRE</Label>
+                            <Label>WinRE</Label>
                             <Format>NTFS</Format>
                             <TypeID>de94bba4-06d1-4d40-a16a-bfd50179d6ac</TypeID>
                         </ModifyPartition>
@@ -150,7 +157,7 @@
                         </Password>
                         <Description>Provisioning Agent</Description>
                         <DisplayName>Gas</DisplayName>
-                        <Group>administrators</Group>
+                        <Group>Administrators</Group>
                         <Name>Gas</Name>
                     </LocalAccount>
                     <LocalAccount wcm:action="add">
@@ -160,7 +167,7 @@
                       </Password>
                       <Description>User Account</Description>
                       <DisplayName>Starflake</DisplayName>
-                      <Group>administrators</Group>
+                      <Group>Administrators</Group>
                       <Name>Starflake</Name>
                   </LocalAccount>
                 </LocalAccounts>
