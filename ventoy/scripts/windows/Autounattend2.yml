@@ -182,16 +182,34 @@
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c powershell -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-oem'))"</CommandLine>
-                    <Description>Apply updates pertinent to Windows OEM</Description>
+                    <CommandLine>powershell -ExecutionPolicy ByPass Invoke-Expression (Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0)</CommandLine>
+                    <Description>Disable UAC</Description>
                     <Order>1</Order>
                     <RequiresUserInput>false</RequiresUserInput>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c powershell -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-quickstart'))"</CommandLine>
-                    <Description>Provision with Gas Station</Description>
+                    <CommandLine>powershell -ExecutionPolicy ByPass Invoke-Expression (Invoke-WebRequest -Uri "https://install.doctor/windows-oem")</CommandLine>
+                    <Description>Download and run the Windows OEM logic</Description>
                     <Order>2</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell -ExecutionPolicy ByPass Invoke-Expression (Invoke-WebRequest -Uri "http://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1")</CommandLine>
+                    <Description>Configure for Ansible WinRM connections</Description>
+                    <Order>3</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell -ExecutionPolicy ByPass Invoke-Expression (Invoke-WebRequest -Uri "https://install.doctor/windows-quickstart" -OutFile "C:\Temp\quickstart.ps1")</CommandLine>
+                    <Description>Download the quickstart.ps1 script</Description>
+                    <Order>4</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell -ExecutionPolicy ByPass Invoke-Expression (Set-Content -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Gas Station.bat" "PowerShell.exe -ExecutionPolicy RemoteSigned -Command `"Start-Process -FilePath powershell -ArgumentList '-File C:\Temp\quickstart.ps1 -Verbose' -verb runas`"")</CommandLine>
+                    <Description>Configure quickstart.ps1 script to run on login</Description>
+                    <Order>5</Order>
+                    <RequiresUserInput>false</RequiresUserInput>
                 </SynchronousCommand>
             </FirstLogonCommands>
         </component>
