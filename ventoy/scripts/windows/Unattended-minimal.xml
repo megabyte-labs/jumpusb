@@ -1,4 +1,0 @@
-<!-- Example configurations: https://github.com/chef/bento/tree/main/packer_templates/windows/answer_files/10 -->
-<?xml version="1.0" encoding="utf-8"?>
-<unattend xmlns="urn:schemas-microsoft-com:unattend">
-</unattend>
