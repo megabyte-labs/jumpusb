@@ -26,7 +26,7 @@ lang {{ kickstart.lang }}
 timezone {{ kickstart.timezone }} --isUtc
 # Generate a hashed password with the following line:
 #    python -c 'import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass("Confirm: ")) else exit())'
-user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ execSync ('openssl passwd -1 -stdin <<< "' + kickstart.password + '"') }} --iscryped
+user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ execSync (append 'openssl passwd -1 -stdin <<< "' (append kickstart.password '"')) }} --iscryped
 
 ### GRUB2 ###
 # With encrypted /boot directory (Password can be generated with GRUB2):
@@ -40,7 +40,7 @@ clearpart --all --initlabel --drives={{join kickstart.disks ","}}
 part btrfs.0{{execSync ('echo $((' + @index + ' + 1))') }} --size=6000 --ondisk={{this}}
 {{/each}}
 
-btrfs none --data=0 --metadata=1 --label=qubes{{#each kickstart.disks}} btrfs.0{{execSync ('echo $((' + @index + ' + 1))') }}{{/each}}
+btrfs none --data=0 --metadata=1 --label=qubes{{#each kickstart.disks}} btrfs.0{{execSync (append (append 'echo $((' @index) ' + 1))' ) }}{{/each}}
 btrfs / --subvol --name=root LABEL=rhel7
 btrfs /home --subvol --name=home rhel7
 btrfs
