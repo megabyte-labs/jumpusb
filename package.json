@@ -100,12 +100,15 @@
     "gitlab_project_id": "35594155",
     "group": "npm",
     "kickstart": {
-      "bootDisk": "",
-      "disks": [],
+      "bootDisk": "nvme1n1",
+      "disks": [
+        "nvme0n1",
+        "nvme1n1"
+      ],
       "keymap": "us",
       "lang": "en_US.UTF-8",
-      "luksPassword": "EncryptedDiskPassword!!!",
-      "password": "LoginPassword!!!",
+      "luksPassword": "124!!!",
+      "password": "124!!!",
       "timezone": "America/New_York",
       "username": "brian",
       "xlayouts": "us"
