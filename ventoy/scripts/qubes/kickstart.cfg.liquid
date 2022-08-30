@@ -26,7 +26,7 @@ lang {{ kickstart.lang }}
 timezone {{ kickstart.timezone }} --isUtc
 # Generate a hashed password with the following line:
 #    python -c 'import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass("Confirm: ")) else exit())'
-user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ execSync ('openssl passwd -1 -stdin <<< ' + kickstart.password) }} --iscryped
+user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ execSync ('openssl passwd -1 -stdin <<< "' + kickstart.password + '"') }} --iscryped
 
 ### GRUB2 ###
 # With encrypted /boot directory (Password can be generated with GRUB2):
@@ -66,7 +66,7 @@ cp -rf /run/install/repo/.modules/gas-station /mnt/sysimage/etc/ansible
 
 # Copy binaries
 mkdir -p /mnt/sysimage/usr/src/qubes-dom0-binaries
-cp -rf /run/install/repo/.modules/gas-station /mnt/sysimage/etc/ansible
+cp -rf /run/install/repo/.modules/qubes-dom0-binaries /mnt/sysimage/usr/src/qubes-dom0-binaries
 
 # Set up Qubes Ansible connection plugin symlink
 mkdir -p /mnt/sysimage/usr/share/ansible/plugins/connection
