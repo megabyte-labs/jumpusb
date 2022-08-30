@@ -26,7 +26,7 @@ lang {{ kickstart.lang }}
 timezone {{ kickstart.timezone }} --isUtc
 # Generate a hashed password with the following line:
 #    python -c 'import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass("Confirm: ")) else exit())'
-user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ execSync ('openssl passwd -1 -stdin <<< ' + kickstart.password) }} --iscryped
+user --groups=wheel,qubes --name={{ kickstart.username }} --password={{ execSync ('openssl passwd -1 -stdin <<< "' + kickstart.password + '"') }} --iscryped
 
 ### GRUB2 ###
 # With encrypted /boot directory (Password can be generated with GRUB2):
@@ -36,6 +36,14 @@ bootloader --location=mbr --boot-drive={{ kickstart.bootDisk }}
 
 ### Partitioning ###
 clearpart --all --initlabel --drives={{join kickstart.disks ","}}
+{{#each kickstart.disks}}
+part btrfs.0{{execSync ('echo $((' + @index + ' + 1))') }} --size=6000 --ondisk={{this}}
+{{/each}}
+
+btrfs none --data=0 --metadata=1 --label=qubes{{#each kickstart.disks}} btrfs.0{{execSync ('echo $((' + @index + ' + 1))') }}{{/each}}
+btrfs / --subvol --name=root LABEL=rhel7
+btrfs /home --subvol --name=home rhel7
+btrfs
 autopart
 
 ### Initial Boot Settings ###
@@ -43,7 +51,7 @@ xconfig  --startxonboot
 firstboot --enable
 
 ### Power Off After Installation ###
-poweroff
+reboot
 
 ### Extra Packages ###
 %packages
@@ -56,6 +64,10 @@ set -e
 mkdir -p /mnt/sysimage/etc/ansible
 cp -rf /run/install/repo/.modules/gas-station /mnt/sysimage/etc/ansible
 
+# Copy binaries
+mkdir -p /mnt/sysimage/usr/src/qubes-dom0-binaries
+cp -rf /run/install/repo/.modules/gas-station /mnt/sysimage/etc/ansible
+
 # Set up Qubes Ansible connection plugin symlink
 mkdir -p /mnt/sysimage/usr/share/ansible/plugins/connection
 ln -s /mnt/sysimage/etc/ansible/scripts/connection/qubes.py /usr/share/ansible/plugins/connection/qubes.py
@@ -63,6 +75,17 @@ ln -s /mnt/sysimage/etc/ansible/scripts/connection/qubes.py /usr/share/ansible/p
 # Set up Qubes Ansible library symlink
 mkdir -p /mnt/sysimage/usr/share/ansible/library
 ln -s /mnt/sysimage/etc/ansible/scripts/library/qubesos.py /usr/share/ansible/library/qubesos.py
+
+# Enable auto-login on the first boot
+cp /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.bak
+echo 'autologin-user = user' >> /etc/lightdm/lightdm.conf
+echo 'autologin-user-timeout = 0' >> /etc/lightdm/lightdm.conf
+
+# Run quickstart on first boot
+mkdir -p /mnt/sysimage/home/{{ kickstart.username }}/.config/autostart
+cp /run/install/repo/ventoy/scripts/qubes/first-boot.desktop /mnt/sysimage/home/{{ kickstart.username }}/.config/autostart/first-boot.desktop
+cp /run/install/repo/ventoy/scripts/qubes/quickstart /mnt/sysimage/usr/bin/quickstart
+
 %end
 
 %anaconda
