@@ -17,22 +17,22 @@ terminal-border: "0"
 + boot_menu {
   left = 30%
   top = 30%
-  width = 40%
-  height = 40%
-  item_font = "DejaVu Sans Regular 24"
+  width = 45%
+  height = 60%
+  item_font = "DejaVu Sans Regular 32"
   item_color = "#cccccc"
   selected_item_color = "#ffffff"
-  icon_width = 48
-  icon_height = 48
-  item_icon_space = 24
-  item_height = 56
-  item_padding = 8
-  item_spacing = 16
+  icon_width = 64
+  icon_height = 64
+  item_icon_space = 36
+  item_height = 80
+  item_padding = 12
+  item_spacing = 24
   selected_item_pixmap_style = "select_*.png"
 }
 
 + image {
-  top = 100%-76
+  top = 90%
   left = 50%-360
   width = 720
   height = 63
@@ -43,10 +43,26 @@ terminal-border: "0"
 + label {
   top = 82%
   left = 32%
-  width = 36%
+  width = 30%
   align = "center"
   id = "__timeout__"
   text = "Booting in %d seconds"
   color = "#cccccc"
-  font = "DejaVu Sans Regular 24"
+  font = "DejaVu Sans Regular 32"
+}
+
++ hbox {
+  left = 30%
+  top = 95%
+  width = 10%
+  height = 25
+  + label {text = "@VTOY_HOTKEY_TIP@" color = "white" align = "left"}
+}
+
++ hbox {
+  left = 90%
+  top = 5
+  width = 10%
+  height = 25
+  + label {text = "@VTOY_MEM_DISK@" color = "red" align = "left"}
 }
