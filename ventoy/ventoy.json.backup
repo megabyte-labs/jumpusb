@@ -1,0 +1,221 @@
+{
+  "auto_install": [
+    {
+      "parent": "/iso/fedora",
+      "template": ["/ventoy/scripts/fedora/kickstart.cfg"]
+    },
+    {
+      "parent": "/iso/qubes",
+      "template": ["/ventoy/scripts/qubes/kickstart.cfg"]
+    },
+    {
+      "parent": "/iso/ubuntu",
+      "template": ["/ventoy/scripts/ubuntu/cloud-init-server", "/ventoy/scripts/ubuntu/cloud-init-desktop"]
+    },
+    {
+      "parent": "/iso/windows",
+      "template": ["/ventoy/scripts/windows/Unattended-minimal.xml", "/ventoy/scripts/windows/Unattended.xml"]
+    }
+  ],
+  "control": [{ "VTOY_DEFAULT_SEARCH_ROOT": "/iso" }, { "VTOY_MENU_TIMEOUT": "30" }],
+  "menu_alias": [
+    {
+      "alias": "Fedora",
+      "dir": "/iso/fedora"
+    },
+    {
+      "alias": "Qubes",
+      "dir": "/iso/qubes"
+    },
+    {
+      "alias": "Ubuntu",
+      "dir": "/iso/ubuntu"
+    },
+    {
+      "alias": "Windows",
+      "dir": "/iso/windows"
+    },
+    {
+      "alias": "Proxmox",
+      "dir": "/iso/proxmox"
+    },
+    {
+      "alias": "ArchLinux",
+      "dir": "/iso/archlinux"
+    },
+    {
+      "alias": "CloneZilla",
+      "image": "/iso/misc/clonezilla-2.8.1-12-amd64.iso"
+    },
+    {
+      "alias": "Elementary",
+      "dir": "/iso/elementary"
+    },
+    {
+      "alias": "Kali",
+      "dir": "/iso/kali"
+    },
+    {
+      "alias": "pfSense",
+      "dir": "/iso/pfsense"
+    },
+    {
+      "alias": "FydeOS",
+      "dir": "/iso/fydeos"
+    },
+    {
+      "alias": "Security Onion",
+      "dir": "/iso/seconion"
+    },
+    {
+      "alias": "Deepin",
+      "dir": "/iso/deepin"
+    },
+    {
+      "alias": "OPNSense",
+      "dir": "/iso/opnsense"
+    },
+    {
+      "alias": "Puppy Linux",
+      "dir": "/iso/puppylinux"
+    },
+    {
+      "alias": "ShredOS",
+      "image": "/iso/misc/shredos-amd64.iso"
+    },
+    {
+      "alias": "Kaspersky Rescue Disk",
+      "image": "/iso/misc/kaspersky-rescue-disk-18-amd64.iso"
+    },
+    {
+      "alias": "NetbootXYZ",
+      "image": "/iso/misc/netboot.xyz.io"
+    },
+    {
+      "alias": "Zorin",
+      "dir": "/iso/zorin"
+    }
+  ],
+  "menu_class": [
+    {
+      "class": "arch",
+      "parent": "/iso/archlinux"
+    },
+    {
+      "class": "clonezilla",
+      "key": "clonezilla"
+    },
+    {
+      "class": "elementary",
+      "parent": "/iso/elementary"
+    },
+    {
+      "class": "kali",
+      "parent": "/iso/kali"
+    },
+    {
+      "class": "krd",
+      "key": "kaspersky"
+    },
+    {
+      "class": "fydeos",
+      "parent": "/iso/fydeos"
+    },
+    {
+      "class": "opnsense",
+      "parent": "/iso/opnsense"
+    },
+    {
+      "class": "pfsense",
+      "parent": "/iso/pfsense"
+    },
+    {
+      "class": "proxmox",
+      "parent": "/iso/proxmox"
+    },
+    {
+      "class": "puppy",
+      "parent": "/iso/puppylinux"
+    },
+    {
+      "class": "seconion",
+      "parent": "/iso/seconion"
+    },
+    {
+      "class": "shred",
+      "key": "shredos"
+    },
+    {
+      "class": "netboot",
+      "key": "netboot"
+    },
+    {
+      "class": "ubuntu",
+      "parent": "/iso/ubuntu"
+    },
+    {
+      "class": "zorin",
+      "parent": "/iso/zorin"
+    },
+    {
+      "class": "fedora",
+      "parent": "/iso/fedora"
+    },
+    {
+      "class": "qubes",
+      "parent": "/iso/qubes"
+    },
+    {
+      "class": "windows",
+      "parent": "/iso/windows"
+    }
+  ],
+  "persistence": [
+    {
+      "backend": ["/persistence/archlinux.dat"],
+      "image": "/iso/live/archlinux.iso"
+    },
+    {
+      "backend": ["/persistence/elementary.dat"],
+      "image": "/iso/live/elementary.iso"
+    },
+    {
+      "backend": ["/persistence/kali.dat"],
+      "image": "/iso/live/kali.iso"
+    },
+    {
+      "backend": ["/persistence/krd.dat"],
+      "image": "/iso/live/kaspersky-rescue-disk.iso"
+    },
+    {
+      "backend": ["/persistence/ubuntu.dat"],
+      "image": "/iso/live/ubuntu.iso"
+    },
+    {
+      "backend": ["/persistence/zorin.dat"],
+      "image": "/iso/live/zorin.iso"
+    }
+  ],
+  "theme": {
+    "default_file": 1,
+    "display_mode": "GUI",
+    "file": ["/ventoy/themes/default/theme.txt"],
+    "fonts": [
+      "/ventoy/fonts/dejavu_sans_12.pf2",
+      "/ventoy/fonts/dejavu_sans_14.pf2",
+      "/ventoy/fonts/dejavu_sans_16.pf2",
+      "/ventoy/fonts/dejavu_sans_24.pf2",
+      "/ventoy/fonts/dejavu_sans_32.pf2",
+      "/ventoy/fonts/dejavu_sans_48.pf2",
+      "/ventoy/fonts/terminus-12.pf2:",
+      "/ventoy/fonts/terminus-14.pf2",
+      "/ventoy/fonts/terminus-16.pf2",
+      "/ventoy/fonts/terminus-18.pf2"
+    ],
+    "gfxmode": "3440x1440,auto",
+    "serial_param": "--unit=0 --speed=9600",
+    "ventoy_color": "#efefef",
+    "ventoy_left": "5%",
+    "ventoy_top": "95%"
+  }
+}
